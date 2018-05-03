@@ -5,9 +5,11 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using CourseProject.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CourseProject.Controllers
 {
+    
     public class HomeController : Controller
     {
         public IActionResult Index()
@@ -22,6 +24,7 @@ namespace CourseProject.Controllers
             return View();
         }
 
+        [Authorize(Roles = "admin")]
         public IActionResult Contact()
         {
             ViewData["Message"] = "Your contact page.";
