@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -12,9 +8,12 @@ using Course_Project.Data;
 using Course_Project.Models;
 using Course_Project.Services;
 using Microsoft.Extensions.Logging;
-using Microsoft.AspNetCore.Http;
 using Course_Project.Loggs;
 using System.IO;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.Extensions.Options;
+
 
 namespace Course_Project
 {
@@ -30,17 +29,17 @@ namespace Course_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<ApplicationUser, IdentityRole>(opts => {
-                opts.Password.RequiredLength = 6;   // минимальная длина
-                opts.Password.RequireNonAlphanumeric = false;   // требуются ли не алфавитно-цифровые символы
-                opts.Password.RequireLowercase = true; // требуются ли символы в нижнем регистре
-                opts.Password.RequireUppercase = false; // требуются ли символы в верхнем регистре
-                opts.Password.RequireDigit = true; // требуются ли цифры
-                opts.User.RequireUniqueEmail = true;    // уникальный email
+                opts.Password.RequiredLength = 6;   
+                opts.Password.RequireNonAlphanumeric = false;   
+                opts.Password.RequireLowercase = true; 
+                opts.Password.RequireUppercase = false; 
+                opts.Password.RequireDigit = true; 
+                opts.User.RequireUniqueEmail = true; 
             })
 
             .AddEntityFrameworkStores<ApplicationDbContext>()
@@ -70,7 +69,23 @@ namespace Course_Project
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
-            services.AddMvc();
+            services.AddMvc()
+                    .AddDataAnnotationsLocalization()
+                    .AddViewLocalization();
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                  
+                    new CultureInfo("be"),
+                    new CultureInfo("ru")
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("ru");
+                options.SupportedCultures = supportedCultures;
+                options.SupportedUICultures = supportedCultures;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -90,9 +105,11 @@ namespace Course_Project
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+            var locOptions = app.ApplicationServices.GetService<IOptions<RequestLocalizationOptions>>();
+            app.UseRequestLocalization(locOptions.Value);
 
             app.UseStaticFiles();
-
+         
             app.UseAuthentication();
 
             app.UseMvc(routes =>
