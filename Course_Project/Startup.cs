@@ -11,6 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Course_Project.Data;
 using Course_Project.Models;
 using Course_Project.Services;
+using Microsoft.Extensions.Logging;
+using Microsoft.AspNetCore.Http;
+using Course_Project.Loggs;
+using System.IO;
 
 namespace Course_Project
 {
@@ -70,8 +74,12 @@ namespace Course_Project
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
+            loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
+            var logger = loggerFactory.CreateLogger("FileLogger");
+
             if (env.IsDevelopment())
             {
                 app.UseBrowserLink();
@@ -89,6 +97,7 @@ namespace Course_Project
 
             app.UseMvc(routes =>
             {
+                logger.LogInformation("Processing request {0}");
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
