@@ -7,6 +7,6 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csproj.CoreCompileIn
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.AssemblyInfoInputs.cache
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.AssemblyInfo.cs
 D:\cp\Course_Project\bin\Debug\netcoreapp2.0\Course_Project.pdb
-D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.pdb
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
