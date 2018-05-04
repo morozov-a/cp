@@ -64,3 +64,135 @@ Executing action method Course_Project.Controllers.HomeController.Index (Course_
 Executing ViewResult, running view at path /Views/Home/Index.cshtml.
 Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 33.532ms
 Request finished in 128.3539ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/js/bootstrap.js  
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 8429.4511ms
+The file /lib/bootstrap/dist/js/bootstrap.js was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner4.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/css/site.css  
+Request finished in 368.4151ms 304 application/javascript
+The file /images/banner4.svg was not modified
+The file /css/site.css was not modified
+Request finished in 9540.4292ms 200 text/html; charset=utf-8
+Request finished in 518.7323ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery/dist/jquery.js  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css  
+Request finished in 603.9366ms 304 text/css
+The file /lib/jquery/dist/jquery.js was not modified
+The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+Request finished in 156.3484ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner2.svg  
+Request finished in 254.5519ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/js/site.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner1.svg  
+The file /js/site.js was not modified
+The file /images/banner2.svg was not modified
+The file /images/banner1.svg was not modified
+Request finished in 302.2478ms 304 image/svg+xml
+Request finished in 246.4274ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner3.svg  
+Request finished in 822.8108ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+The file /images/banner3.svg was not modified
+Request finished in 425.6492ms 304 image/svg+xml
+The file /lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 was not modified
+Request finished in 372.2451ms 304 font/woff2
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 813.1948ms
+Request finished in 1038.014ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 25.811ms
+Request finished in 118.827ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 19.3ms
+Request finished in 52.8396ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 32.1988ms
+Request finished in 131.8797ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 26.813ms
+Request finished in 88.2083ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 465.3881ms
+Request finished in 567.2601ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 20.852ms
+Request finished in 58.5176ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About?culture=ru  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 50.9446ms
+Request finished in 150.8362ms 200 text/html; charset=utf-8
+Processing request {0}
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6495.1387ms
+Request finished in 7562.8721ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 319.3179ms
+Request finished in 484.726ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 349.2625ms
+Request finished in 433.2714ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About?culture=en  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 24.4254ms
+Request finished in 72.9435ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About?culture=en  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 23.8123ms
+Request finished in 48.8735ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'D:\cp\Course_Project\wwwroot\favicon.ico'
+Request finished in 40.6479ms 200 image/x-icon
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7312.7297ms
+Request finished in 7883.6869ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 828.935ms
+Request finished in 1127.5279ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 388.546ms
+Request finished in 423.8288ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact?culture=be  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 40.6344ms
+Request finished in 70.2992ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact?culture=ru  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 45.5259ms
+Request finished in 139.2491ms 200 text/html; charset=utf-8

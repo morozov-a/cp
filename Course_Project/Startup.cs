@@ -15,6 +15,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.AspNetCore.Http;
 using Course_Project.Loggs;
 using System.IO;
+using System.Globalization;
+using Microsoft.AspNetCore.Localization;
 
 namespace Course_Project
 {
@@ -30,7 +32,7 @@ namespace Course_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -90,6 +92,19 @@ namespace Course_Project
             {
                 app.UseExceptionHandler("/Home/Error");
             }
+
+            var supportedCultures = new[]
+            {
+                new CultureInfo("be"),
+                new CultureInfo("ru")
+                
+            };
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("ru"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseStaticFiles();
 

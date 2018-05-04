@@ -34,6 +34,14 @@
         "runtime": {
           "Course_Project.dll": {}
         },
+        "resources": {
+          "be/Course_Project.resources.dll": {
+            "locale": "be"
+          },
+          "ru/Course_Project.resources.dll": {
+            "locale": "ru"
+          }
+        },
         "compile": {
           "Course_Project.dll": {}
         }
