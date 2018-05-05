@@ -59,7 +59,7 @@ namespace Course_Project.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = await _userManager.FindByNameAsync(model.Email);
+                var user = await _userManager.FindByNameAsync(model.Username);
                 if (user != null)
                 {
                     // проверяем, подтвержден ли email
@@ -70,7 +70,7 @@ namespace Course_Project.Controllers
                     }
                 }
 
-                var result = await _signInManager.PasswordSignInAsync(model.Email, model.Password,
+                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password,
                                                     model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
@@ -219,7 +219,7 @@ namespace Course_Project.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Username, Email = model.Email };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -234,11 +234,11 @@ namespace Course_Project.Controllers
                         $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>ссылка</a>");
 
                     // await _signInManager.SignInAsync(user, isPersistent: false);
-                    return RedirectToLocal(returnUrl);
+                    return RedirectToAction(nameof(AccountController.ConfirmEmailAfterRegistration), "Account");
                 }
                 AddErrors(result);
             }
-            return View(model);
+            return RedirectToAction(nameof(AccountController.ConfirmEmailAfterRegistration), "Account");
         }
 
         [HttpPost]
@@ -293,7 +293,8 @@ namespace Course_Project.Controllers
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.Principal.FindFirstValue(ClaimTypes.Email);
-                return View("ExternalLogin", new ExternalLoginViewModel { Email = email });
+                var username = info.Principal.FindFirstValue(ClaimTypes.Name).Replace(" ","");
+                return View("ExternalLogin", new ExternalLoginViewModel { Email = email, Username = username });
             }
         }
 
@@ -310,7 +311,7 @@ namespace Course_Project.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+                var user = new ApplicationUser { UserName = model.Username, Email = model.Email, EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -344,6 +345,14 @@ namespace Course_Project.Controllers
             }
             var result = await _userManager.ConfirmEmailAsync(user, code);
             return View(result.Succeeded ? "ConfirmEmail" : "Error");
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult ConfirmEmailAfterRegistration()
+        {
+            
+            return View();
         }
 
         [HttpGet]
