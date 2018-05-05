@@ -8,7 +8,6 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.AssemblyInfo.cs
 D:\cp\Course_Project\bin\Debug\netcoreapp2.0\Course_Project.pdb
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.pdb
-D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\cp\Course_Project\bin\Debug\netcoreapp2.0\ru\Course_Project.resources.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Controllers.HomeController.ru.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csproj.GenerateResource.cache
@@ -17,3 +16,4 @@ D:\cp\Course_Project\bin\Debug\netcoreapp2.0\be\Course_Project.resources.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csprojResolveAssemblyReference.cache
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Controllers.HomeController.be.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\be\Course_Project.resources.dll
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs

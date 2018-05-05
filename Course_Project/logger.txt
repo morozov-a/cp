@@ -921,3 +921,264 @@ AuthenticationScheme: Identity.External signed out.
 Executing ViewResult, running view at path /Views/Account/Login.cshtml.
 Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 53.1821ms
 Request finished in 290.0248ms 200 text/html; charset=utf-8
+Processing request {0}
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 10718.3594ms
+Request finished in 11623.0756ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner1.svg  
+The file /images/banner1.svg was not modified
+The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner4.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery/dist/jquery.js  
+Request finished in 191.1163ms 304 text/css
+The file /css/site.css was not modified
+The file /images/banner4.svg was not modified
+Request finished in 207.7246ms 304 image/svg+xml
+The file /lib/jquery/dist/jquery.js was not modified
+Request finished in 220.591ms 304 text/css
+Request finished in 123.3609ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/js/site.js?v=ji3-IxbEzYWjzzLCGkF1KDjrT2jLbbrSYXw-AhMPNIA  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner3.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner2.svg  
+The file /images/banner3.svg was not modified
+Request finished in 474.4817ms 304 application/javascript
+The file /js/site.js was not modified
+Request finished in 162.3418ms 304 image/svg+xml
+The file /images/banner2.svg was not modified
+Request finished in 660.1605ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/js/bootstrap.js  
+The file /lib/bootstrap/dist/js/bootstrap.js was not modified
+Request finished in 181.8396ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+The file /lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 was not modified
+Request finished in 227.016ms 304 font/woff2
+Request finished in 257.6062ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 772.5755ms
+Request finished in 860.081ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FAbout application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (ru, /Home/About) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/About.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 95.2632ms
+Request finished in 186.0445ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 71.6918ms
+Request finished in 127.1671ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 255.7355ms
+Request finished in 287.1002ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FContact application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (be, /Home/Contact) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/Contact.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 30.0358ms
+Request finished in 62.9164ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 34.6064ms
+Request finished in 141.8938ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FContact application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (ru, /Home/Contact) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/Contact.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 39.1754ms
+Request finished in 79.5246ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 47.3674ms
+Request finished in 164.6436ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FContact application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (be, /Home/Contact) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/Contact.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 33.7929ms
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Request finished in 66.1051ms 302 
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 88.8214ms
+Request finished in 200.8544ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FContact application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (ru, /Home/Contact) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/Contact.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 132.2001ms
+Request finished in 201.9942ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 25.9439ms
+Request finished in 59.767ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FContact application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (be, /Home/Contact) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/Contact.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 171.1113ms
+Request finished in 414.3527ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/Contact  
+Executing action method Course_Project.Controllers.HomeController.Contact (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Contact.cshtml.
+Executed action Course_Project.Controllers.HomeController.Contact (Course_Project) in 29.4562ms
+Request finished in 72.023ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 25.4318ms
+Request finished in 64.0762ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 75.2312ms
+Request finished in 493.3296ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2543.7827ms
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+The file /lib/jquery-validation/dist/jquery.validate.js was not modified
+Request finished in 377.4925ms 304 application/javascript
+Request finished in 3029.3552ms 200 text/html; charset=utf-8
+The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js was not modified
+Request finished in 484.3624ms 304 application/javascript
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 16537.0254ms
+Request finished in 19988.5354ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 398.4083ms
+Request finished in 530.0666ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FAbout application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (ru, /Home/About) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/About.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 527.7416ms
+Request finished in 1049.8826ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 235.4215ms
+Request finished in 741.1562ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Home/SetLanguage?returnUrl=%2FHome%2FAbout application/x-www-form-urlencoded 193
+Executing action method Course_Project.Controllers.HomeController.SetLanguage (Course_Project) with arguments (be, /Home/About) - ModelState is Valid
+Executing LocalRedirectResult, redirecting to /Home/About.
+Executed action Course_Project.Controllers.HomeController.SetLanguage (Course_Project) in 37.8022ms
+Request finished in 135.6832ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Home/About  
+Executing action method Course_Project.Controllers.HomeController.About (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/About.cshtml.
+Executed action Course_Project.Controllers.HomeController.About (Course_Project) in 29.1467ms
+Request finished in 221.2911ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2277.5393ms
+Request finished in 2617.9778ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 241
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (872ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 4512.5173ms
+Request finished in 4667.5082ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 9589.7689ms
+Request finished in 10282.9143ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1444.9255ms
+Request finished in 1620.6415ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 247
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (119ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1998.6603ms
+Request finished in 2176.4695ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 8468.2533ms
+Request finished in 9424.511ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1900.3892ms
+Request finished in 2081.8502ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 247
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (87ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (25ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 11960805-9bb3-42cc-a78e-712f8bfa3a41.
+User 11960805-9bb3-42cc-a78e-712f8bfa3a41 failed to provide the correct password.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1349.9729ms
+Request finished in 1562.5706ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 241
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 11960805-9bb3-42cc-a78e-712f8bfa3a41.
+User 11960805-9bb3-42cc-a78e-712f8bfa3a41 failed to provide the correct password.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 118.1107ms
+Request finished in 239.4632ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 241
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (72ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Email], [u].[EmailConfirmed], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 11960805-9bb3-42cc-a78e-712f8bfa3a41.
+User 11960805-9bb3-42cc-a78e-712f8bfa3a41 failed to provide the correct password.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 291.6254ms
+Request finished in 532.9329ms 200 text/html; charset=utf-8
