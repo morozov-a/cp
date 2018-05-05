@@ -68,6 +68,7 @@ namespace Course_Project.Controllers
                 {
                     UserId = user.Id,
                     UserEmail = user.Email,
+                    UserName = user.UserName,
                     UserRoles = userRoles,
                     AllRoles = allRoles
                 };

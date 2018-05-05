@@ -8151,3 +8151,416 @@ FROM [AspNetUsers] AS [a]
 Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
 Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 103.4584ms
 Request finished in 207.5365ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 8032.7778ms
+Request starting HTTP/1.1 GET http://localhost:44343/js/site.js?v=7mkNbU1tgQL1bUeZe3j2R151hKLhLDKO4BBaR-iqCy0  
+Request finished in 8736.1044ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner2.svg  
+The file /images/banner2.svg was not modified
+Request finished in 91.1793ms 304 image/svg+xml
+The file /css/site.css was not modified
+Request finished in 208.2885ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner1.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner4.svg  
+The file /images/banner1.svg was not modified
+The file /js/site.js was not modified
+The file /images/banner4.svg was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery/dist/jquery.js  
+Request finished in 249.5117ms 304 image/svg+xml
+Request finished in 158.3702ms 304 image/svg+xml
+Request finished in 315.1097ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner3.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css  
+The file /lib/jquery/dist/jquery.js was not modified
+The file /images/banner3.svg was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/js/bootstrap.js  
+The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+Request finished in 341.4068ms 304 image/svg+xml
+Request finished in 366.199ms 304 text/css
+The file /lib/bootstrap/dist/js/bootstrap.js was not modified
+Request finished in 578.2738ms 304 application/javascript
+Request finished in 387.9235ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+The file /lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 was not modified
+Request finished in 34.8198ms 304 font/woff2
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1592.2146ms
+Request finished in 1891.2395ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation/dist/jquery.validate.js  
+The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js was not modified
+The file /lib/jquery-validation/dist/jquery.validate.js was not modified
+Request finished in 424.312ms 304 application/javascript
+Request finished in 398.0597ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (323ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 12024.8818ms
+Request finished in 12213.9038ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (281ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 1211.1553ms
+Request finished in 1349.957ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (252ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (222ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 1654.6961ms
+Request finished in 1800.468ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6226.2948ms
+Request finished in 6576.0849ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery/dist/jquery.js  
+Request starting HTTP/1.1 GET http://localhost:44343/css/site.css  
+The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+The file /lib/jquery/dist/jquery.js was not modified
+The file /css/site.css was not modified
+Request finished in 11.5963ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner3.svg  
+The file /images/banner3.svg was not modified
+Request finished in 3.0445ms 304 image/svg+xml
+Request finished in 11.7918ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/js/bootstrap.js  
+The file /lib/bootstrap/dist/js/bootstrap.js was not modified
+Request finished in 4.5451ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/js/site.js?v=7mkNbU1tgQL1bUeZe3j2R151hKLhLDKO4BBaR-iqCy0  
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner1.svg  
+The file /images/banner1.svg was not modified
+Request finished in 5.6725ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner2.svg  
+The file /images/banner2.svg was not modified
+Request finished in 4.6191ms 304 image/svg+xml
+The file /js/site.js was not modified
+Request finished in 11.1949ms 304 application/javascript
+Request finished in 18.0662ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner4.svg  
+The file /images/banner4.svg was not modified
+Request finished in 2.0586ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+The file /lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 was not modified
+Request finished in 2.534ms 304 font/woff2
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 1044.2413ms
+Request finished in 1061.0014ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 303.3253ms
+Request finished in 312.5362ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (76ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 673.7363ms
+Request finished in 720.7818ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (58ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (1ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 6221.6923ms
+Request finished in 6535.3154ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'D:\cp\Course_Project\wwwroot\favicon.ico'
+Request finished in 17.5957ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 336.3495ms
+Request finished in 347.7882ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (7ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 44.5919ms
+Request finished in 49.8939ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (84ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 7029.2617ms
+Request finished in 7458.9455ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'D:\cp\Course_Project\wwwroot\favicon.ico'
+Request finished in 16.9923ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (10ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 275.602ms
+Request finished in 284.2149ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (9ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 296.4108ms
+Request finished in 308.0158ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Roles/Delete/af43b1e4-e328-4032-936d-43f27faa3151 application/x-www-form-urlencoded 182
+Executing action method Course_Project.Controllers.RolesController.Delete (Course_Project) with arguments (af43b1e4-e328-4032-936d-43f27faa3151) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (29ms) [Parameters=[@__roleId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[ConcurrencyStamp], [u].[Name], [u].[NormalizedName]
+FROM [AspNetRoles] AS [u]
+WHERE [u].[Id] = @__roleId_0
+Executed DbCommand (134ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+DELETE FROM [AspNetRoles]
+WHERE [Id] = @p0 AND [ConcurrencyStamp] = @p1;
+SELECT @@ROWCOUNT;
+Executing RedirectResult, redirecting to /Roles.
+Executed action Course_Project.Controllers.RolesController.Delete (Course_Project) in 404.0078ms
+Request finished in 419.904ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 25.442ms
+Request finished in 30.0007ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 17.466ms
+Request finished in 23.3212ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 29.6053ms
+Request finished in 35.1082ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 13.8921ms
+Request finished in 19.6322ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=7cee9e46-c497-4409-b09e-3b27b000ba0c  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (7cee9e46-c497-4409-b09e-3b27b000ba0c) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 16.6957ms
+Request finished in 19.2584ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 15.7293ms
+Request finished in 19.0288ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=f5c6ced7-d3da-482c-acac-3c91dbf9e831  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (f5c6ced7-d3da-482c-acac-3c91dbf9e831) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 19.9099ms
+Request finished in 23.1338ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 18.4081ms
+Request finished in 21.2431ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (2ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 20.2464ms
+Request finished in 24.9294ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 9.3642ms
+Request finished in 11.4402ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/Edit?userid=7cee9e46-c497-4409-b09e-3b27b000ba0c  
+Executing action method Course_Project.Controllers.RolesController.Edit (Course_Project) with arguments (7cee9e46-c497-4409-b09e-3b27b000ba0c) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[Age], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Edit.cshtml.
+Executed action Course_Project.Controllers.RolesController.Edit (Course_Project) in 21.6082ms
+Request finished in 28.0976ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[Age], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 15.1573ms
+Request finished in 20.2318ms 200 text/html; charset=utf-8
