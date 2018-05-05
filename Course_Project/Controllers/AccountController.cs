@@ -238,7 +238,7 @@ namespace Course_Project.Controllers
                 }
                 AddErrors(result);
             }
-            return RedirectToAction(nameof(AccountController.ConfirmEmailAfterRegistration), "Account");
+            return View(model);
         }
 
         [HttpPost]
