@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Course_Project.Models;
 using Course_Project.Models.ManageViewModels;
 using Course_Project.Services;
+using Course_Project.Data;
 
 namespace Course_Project.Controllers
 {
@@ -28,12 +29,13 @@ namespace Course_Project.Controllers
 
         private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
         private const string RecoveryCodesKey = nameof(RecoveryCodesKey);
-
+        private ApplicationDbContext db;
         public ManageController(
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
           ILogger<ManageController> logger,
+          ApplicationDbContext context,
           UrlEncoder urlEncoder)
         {
             _userManager = userManager;
@@ -41,7 +43,10 @@ namespace Course_Project.Controllers
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
+            db = context;
         }
+        
+        
 
         [TempData]
         public string StatusMessage { get; set; }
@@ -59,6 +64,9 @@ namespace Course_Project.Controllers
             {
                 Username = user.UserName,
                 Email = user.Email,
+                Age = user.Age,
+                Firstname = user.FirstName,
+                Lastname = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
                 StatusMessage = StatusMessage
@@ -101,6 +109,14 @@ namespace Course_Project.Controllers
                     throw new ApplicationException($"Unexpected error occurred setting phone number for user with ID '{user.Id}'.");
                 }
             }
+
+            
+            if (model.Firstname != user.FirstName) { user.FirstName = model.Firstname; }
+            if (model.Lastname != user.LastName) { user.LastName = model.Lastname; }
+            if (model.Age != user.Age) { user.Age = model.Age; }
+            db.Users.Update(user); await db.SaveChangesAsync();
+
+
 
             StatusMessage = "Your profile has been updated";
             return RedirectToAction(nameof(Index));
