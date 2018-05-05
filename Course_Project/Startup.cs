@@ -18,6 +18,8 @@ using System.IO;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
+using Brik.Security.VkontakteMiddleware;
+using Microsoft.AspNetCore.Authentication.OAuth;
 
 namespace Course_Project
 {
@@ -65,11 +67,16 @@ namespace Course_Project
                     vk.Scope.Add("notify");
                     vk.Scope.Add("offline");
                     vk.Scope.Add("photos");
-                    vk.CallbackPath = "/signin-vkontakte";
+                    vk.CallbackPath = new PathString("/signin-vkontakte");
                     vk.AuthorizationEndpoint = "https://oauth.vk.com/authorize";
-                    vk.TokenEndpoint = "https://api.vk.com/method/account.getinfo";
+                    vk.TokenEndpoint = "https://oauth.vk.com/access_token";
+                    vk.UserInformationEndpoint = "https://api.vk.com/method/users.get.json";
+                    vk.Scope.Add("email");
+                   
 
                 });
+            //services.AddVkontakteAuthentication();
+
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
 
@@ -114,6 +121,12 @@ namespace Course_Project
             app.UseStaticFiles();
 
             app.UseAuthentication();
+            //app.UseVkontakteAuthentication(new VkontakteOptions
+            //{
+            //    ClientId = Configuration["Authentication:VKontakte:AppId"],
+            //    ClientSecret = Configuration["Authentication:VKontakte:AppSecret"],
+            //    SaveTokens = true
+            //});
 
             app.UseMvc(routes =>
             {
