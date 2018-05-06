@@ -52,9 +52,9 @@ namespace Course_Project.Controllers
         public string StatusMessage { get; set; }
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string userId)
         {
-            var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -62,14 +62,15 @@ namespace Course_Project.Controllers
 
             var model = new IndexViewModel
             {
+                UserId = user.Id,
                 Username = user.UserName,
                 Email = user.Email,
-                Age = user.Age,
                 Firstname = user.FirstName,
                 Lastname = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
                 StatusMessage = StatusMessage
+                
             };
 
             return View(model);
@@ -84,7 +85,7 @@ namespace Course_Project.Controllers
                 return View(model);
             }
 
-            var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(model.UserId);
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -113,13 +114,12 @@ namespace Course_Project.Controllers
             
             if (model.Firstname != user.FirstName) { user.FirstName = model.Firstname; }
             if (model.Lastname != user.LastName) { user.LastName = model.Lastname; }
-            if (model.Age != user.Age) { user.Age = model.Age; }
             db.Users.Update(user); await db.SaveChangesAsync();
 
 
 
             StatusMessage = "Your profile has been updated";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Manage", new { userId = user.Id });
         }
 
         [HttpPost]

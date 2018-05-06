@@ -11,7 +11,6 @@ namespace Course_Project.Models
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Age { get; set; }
         public string Theme { get; set; }
         public string Culture { get; set; }
     }

@@ -24,13 +24,11 @@ namespace Course_Project.Models.ManageViewModels
         [StringLength(50, MinimumLength = 2, ErrorMessage = "Длина фамилии должна быть от 2 до 50 символов")]
         public string Lastname { get; set; }
 
-        [RegularExpression(@"^(?:1(?:00?|\d)|[2-5]\d|[6-9]\d?)$", ErrorMessage = "Возраст от 6 до 100 лет")]     
-        public int Age { get; set; }
-
         [Phone]
         [Display(Name = "Phone number")]
         public string PhoneNumber { get; set; }
 
         public string StatusMessage { get; set; }
+        public string UserId { get; set; }
     }
 }
