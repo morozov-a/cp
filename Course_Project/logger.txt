@@ -13142,3 +13142,1287 @@ WHERE [e].[Id] = @__get_Item_0
 Executing ViewResult, running view at path /Views/Manage/Index.cshtml.
 Executed action Course_Project.Controllers.ManageController.Index (Course_Project) in 58.6666ms
 Request finished in 163.3773ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (116ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (8ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7665.1732ms
+Request finished in 11354.2915ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 435.5713ms
+Request finished in 452.8245ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles/UserList  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.RolesController.UserList (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Culture], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[Theme], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+Executing ViewResult, running view at path /Views/Roles/UserList.cshtml.
+Executed action Course_Project.Controllers.RolesController.UserList (Course_Project) in 337.7308ms
+Request finished in 349.7572ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/Index?userid=0d9040ce-1e33-415e-bbcc-9e947927b7b5  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.Index (Course_Project) with arguments (0d9040ce-1e33-415e-bbcc-9e947927b7b5) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Manage/Index.cshtml.
+Executed action Course_Project.Controllers.ManageController.Index (Course_Project) in 1539.7871ms
+Request finished in 1616.1457ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing RedirectResult, redirecting to /Manage/SetPassword.
+Executed action Course_Project.Controllers.ManageController.ChangePassword (Course_Project) in 25.8045ms
+Request finished in 42.5591ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/SetPassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.SetPassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Manage/SetPassword.cshtml.
+Executed action Course_Project.Controllers.ManageController.SetPassword (Course_Project) in 305.7897ms
+Request finished in 319.3977ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/Index  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.Index (Course_Project) with arguments () - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed action Course_Project.Controllers.ManageController.Index (Course_Project) in 8.1644ms
+An unhandled exception has occurred while executing the request
+Request finished in 216.9537ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/SetPassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.SetPassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Manage/SetPassword.cshtml.
+Executed action Course_Project.Controllers.ManageController.SetPassword (Course_Project) in 28.8425ms
+Request finished in 32.236ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Manage/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ManageController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [l].[LoginProvider], [l].[ProviderKey], [l].[ProviderDisplayName]
+FROM [AspNetUserLogins] AS [l]
+WHERE [l].[UserId] = @__userId_0
+Executing ViewResult, running view at path /Views/Manage/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ManageController.ExternalLogins (Course_Project) in 430.9526ms
+Request finished in 449.8184ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (86ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6813.7314ms
+Request finished in 8464.7682ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 642.3872ms
+An unhandled exception has occurred while executing the request
+Request finished in 945.8887ms 500 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 9783.9494ms
+Request finished in 10559.3767ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Roles  
+Executing action method Course_Project.Controllers.RolesController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (38ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[ConcurrencyStamp], [a].[Name], [a].[NormalizedName]
+FROM [AspNetRoles] AS [a]
+Executing ViewResult, running view at path /Views/Roles/Index.cshtml.
+Executed action Course_Project.Controllers.RolesController.Index (Course_Project) in 1681.7323ms
+Request finished in 1728.7416ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 861.2555ms
+An unhandled exception has occurred while executing the request
+Request finished in 1391.31ms 500 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6823.1507ms
+Request finished in 7473.8003ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1766.7275ms
+Request finished in 2162.3995ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 53.1318ms
+Request finished in 160.8465ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 47.3463ms
+Request finished in 154.7952ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 34.4962ms
+Request finished in 172.7902ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 58.1594ms
+Request finished in 233.4529ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 85.1259ms
+Request finished in 746.0985ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 224
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 61.7133ms
+Request finished in 185.0645ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 227
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 772.7825ms
+Request finished in 1281.3864ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 27.1782ms
+Request finished in 89.6106ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 9219.4462ms
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css  
+Request starting HTTP/1.1 GET http://localhost:44343/css/site.css  
+Request finished in 9737.564ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner2.svg  
+The file /images/banner2.svg was not modified
+The file /lib/bootstrap/dist/css/bootstrap.css was not modified
+The file /css/site.css was not modified
+Request finished in 269.8879ms 304 text/css
+Request finished in 205.0619ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner1.svg  
+Request finished in 203.2971ms 304 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner4.svg  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery/dist/jquery.js  
+Request starting HTTP/1.1 GET http://localhost:44343/js/site.js?v=7mkNbU1tgQL1bUeZe3j2R151hKLhLDKO4BBaR-iqCy0  
+The file /images/banner1.svg was not modified
+The file /lib/jquery/dist/jquery.js was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/js/bootstrap.js  
+Request finished in 294.5115ms 304 application/javascript
+The file /js/site.js was not modified
+The file /images/banner4.svg was not modified
+The file /lib/bootstrap/dist/js/bootstrap.js was not modified
+Request starting HTTP/1.1 GET http://localhost:44343/images/banner3.svg  
+Request finished in 865.8811ms 304 image/svg+xml
+Request finished in 361.279ms 304 application/javascript
+The file /images/banner3.svg was not modified
+Request finished in 927.6502ms 304 image/svg+xml
+Request finished in 388.4723ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+Request finished in 142.3918ms 304 image/svg+xml
+The file /lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2 was not modified
+Request finished in 112.6282ms 304 font/woff2
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1649.3763ms
+Request finished in 1681.2094ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44343/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js was not modified
+The file /lib/jquery-validation/dist/jquery.validate.js was not modified
+Request finished in 73.1687ms 304 application/javascript
+Request finished in 84.3226ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/Security  
+Request finished in 18.2839ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 29.4011ms
+Request finished in 56.3087ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Request finished in 16.1091ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 33.5125ms
+Request finished in 53.2209ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7547.7166ms
+Request finished in 8109.6712ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1178.4946ms
+An unhandled exception has occurred while executing the request
+Request finished in 1804.2493ms 500 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7559.1374ms
+Request finished in 8131.1704ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1565.8434ms
+Request finished in 1625.2766ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 22.0334ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 38.6076ms
+Request finished in 58.2723ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 18.0419ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 23.3768ms
+Request finished in 57.6025ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 18.7128ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 69.4413ms
+Request finished in 173.7949ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 23.7631ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 35.2584ms
+Request finished in 88.763ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7264.9483ms
+Request finished in 7816.2092ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/SetPassword  
+Request finished in 24.7592ms 404 
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (214ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (6ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (2ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6233.2335ms
+Request finished in 10993.5122ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1472.0074ms
+Request finished in 1483.2153ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 10.0292ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 23.9246ms
+Request finished in 37.2193ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 10.8357ms
+Request finished in 16.1717ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 7.7226ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 8.4994ms
+Request finished in 16.9194ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 2.0014ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 12.399ms
+Request finished in 17.5384ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 2.8257ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 9.2216ms
+Request finished in 15.9686ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 2.7809ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 9.301ms
+Request finished in 12.701ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 4.2534ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 11.5288ms
+Request finished in 16.4721ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 2.198ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 13.9758ms
+Request finished in 27.3008ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 3.0953ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 9.1363ms
+Request finished in 13.8408ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 3.5706ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 10.1594ms
+Request finished in 15.1843ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 9.0152ms
+Request finished in 16.4802ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 5.7757ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 7.8063ms
+Request finished in 11.1679ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 10.746ms
+Request finished in 19.9434ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 11.6908ms
+Request finished in 15.8357ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 6.1171ms 404 
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6787.9074ms
+Request finished in 7295.989ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1455.9312ms
+Request finished in 1553.5999ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 46.6284ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 33.2424ms
+Request finished in 76.5724ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Request finished in 13.5983ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 42.0292ms
+Request finished in 207.4441ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:53738/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6303.7753ms
+Request finished in 6754.8767ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:53738/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:53738/lib/jquery/dist/jquery.js  
+Request starting HTTP/1.1 GET http://localhost:53738/lib/bootstrap/dist/css/bootstrap.css  
+Sending file. Request path: '/css/site.css'. Physical path: 'D:\cp\Course_Project\wwwroot\css\site.css'
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.css'
+Sending file. Request path: '/lib/jquery/dist/jquery.js'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\jquery\dist\jquery.js'
+Request finished in 32.4969ms 200 text/css
+Request finished in 61.1607ms 200 application/javascript
+Request finished in 69.2836ms 200 text/css
+Request starting HTTP/1.1 GET http://localhost:53738/lib/bootstrap/dist/js/bootstrap.js  
+Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.js'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\bootstrap\dist\js\bootstrap.js'
+Request starting HTTP/1.1 GET http://localhost:53738/images/banner2.svg  
+Sending file. Request path: '/images/banner2.svg'. Physical path: 'D:\cp\Course_Project\wwwroot\images\banner2.svg'
+Request starting HTTP/1.1 GET http://localhost:53738/js/site.js?v=7mkNbU1tgQL1bUeZe3j2R151hKLhLDKO4BBaR-iqCy0  
+Request starting HTTP/1.1 GET http://localhost:53738/images/banner1.svg  
+Sending file. Request path: '/images/banner1.svg'. Physical path: 'D:\cp\Course_Project\wwwroot\images\banner1.svg'
+Request starting HTTP/1.1 GET http://localhost:53738/images/banner3.svg  
+Sending file. Request path: '/js/site.js'. Physical path: 'D:\cp\Course_Project\wwwroot\js\site.js'
+Sending file. Request path: '/images/banner3.svg'. Physical path: 'D:\cp\Course_Project\wwwroot\images\banner3.svg'
+Request finished in 3.8321ms 200 application/javascript
+Request finished in 50.1148ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:53738/images/banner4.svg  
+Sending file. Request path: '/images/banner4.svg'. Physical path: 'D:\cp\Course_Project\wwwroot\images\banner4.svg'
+Request finished in 56.6733ms 200 image/svg+xml
+Request finished in 10.947ms 200 image/svg+xml
+Request finished in 34.6113ms 200 image/svg+xml
+Request finished in 55.1624ms 200 image/svg+xml
+Request starting HTTP/1.1 GET http://localhost:53738/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2  
+Sending file. Request path: '/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\bootstrap\dist\fonts\glyphicons-halflings-regular.woff2'
+Request finished in 15.0017ms 200 font/woff2
+Request starting HTTP/1.1 GET http://localhost:53738/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'D:\cp\Course_Project\wwwroot\favicon.ico'
+Request finished in 7.2391ms 200 image/x-icon
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:53738/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6043.2576ms
+Request finished in 6433.2317ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6378.3367ms
+Request finished in 6779.2459ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 7086.0102ms
+Request finished in 7618.0488ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1815.1677ms
+Request finished in 1937.6643ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 644.6177ms
+Request finished in 906.6004ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 32.834ms
+Request finished in 107.1388ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 24.9094ms
+Request finished in 54.8901ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 24.2201ms
+Request finished in 91.6908ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 32.4029ms
+Request finished in 128.8589ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 22.5471ms
+Request finished in 49.0404ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 55.265ms
+Request finished in 133.0503ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Request finished in 13.4124ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 22.3656ms
+Request finished in 56.3119ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 32.2771ms
+Request finished in 85.1324ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 38.6222ms
+Request finished in 134.7394ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 28.2564ms
+Request finished in 52.2405ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 34.6458ms
+Request finished in 142.9661ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 26.8665ms
+Request finished in 140.3164ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6516.1931ms
+Request finished in 7077.05ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1396.068ms
+Request finished in 1505.87ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 200
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Facebook, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Facebook).
+AuthenticationScheme: Facebook was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 137.6009ms
+Request finished in 181.3593ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-facebook?code=AQDDWzgXWJ3-Bmaj7svD5QsTIdjOKOalaglTb_VegWzUnKz0CXxSJ2SlhK8W8Gmi-WJs9iEJUWKxQcO5rrSd6Lemei_BeyjxOgIfVNY5gJYF-8R-05cXyyJV7Dat4VCqQiWdAcgxYqLfetYxxIuUkZ6XEdTSMsNfANwrUy6ylMj7sGOYhOD3QB4wI_MXK_r1rc74vbOcfZHREsfGydUqWJq6LnKQgEbcFqdRksDSMLzl765YajLe1JxwW-3bs32AZFLYN6qAzxI01LTIjj7jzmjpFCJMdh-bMXTDY3XfY1WZ_uJ11G9FQX_Z2R5eEl0EBLZ_K_jGan_mJQ_1bAv3T70U&state=CfDJ8F7AOuPBojRBkDxEktSPxmomgRVSFNeI47lKABf1cwgVwkVGfUSJ0IlWJ3_Gxo4qyqvEKuSztRZ-K2Cmmj7Shz4IPXM7lk-Php8c52tHy5QJ8dR-SCiQCErCjv_0VpQoJjGXM7ReiSv09RM1DoJeF1s_4DY0xKv6uJNVlHaHmQ5Bw3ww5MPvdsiT1wxNaf9mujdC22hVGbhP5K7Y0z38rVCQjddr_LMHY_CCwqbO9rD5AbofrprxqAtdXuctUJ6KYbnuX0lJNN0jc30yVzkR7F4  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 704.5317ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (154ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (83ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (5ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (41ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Facebook provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 5061.776ms
+Request finished in 5104.4481ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 78.7213ms
+Request finished in 257.4494ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1572.4424ms
+Request finished in 1639.0316ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 634.2697ms
+Request finished in 679.0086ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 223.6078ms
+Request finished in 394.6829ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 92.3915ms
+Request finished in 431.4912ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 36.0147ms
+Request finished in 185.4853ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 21.9232ms
+Request finished in 136.608ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 40.3297ms
+Request finished in 248.5378ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 233.0185ms
+Request finished in 493.284ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 35.0926ms
+Request finished in 214.3305ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 56.6085ms
+Request finished in 155.7497ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 26.8654ms
+Request finished in 619.8406ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 184.5826ms
+Request finished in 772.7803ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 35.421ms
+Request finished in 155.2209ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 28.7102ms
+Request finished in 212.5414ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 25.3745ms
+Request finished in 271.7645ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 65.492ms
+Request finished in 237.9548ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 35.1385ms
+Request finished in 403.1629ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 31.2302ms
+Request finished in 124.9949ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 27.4186ms
+Request finished in 184.7614ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 26.6709ms
+Request finished in 99.0807ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 33.6886ms
+Request finished in 341.5414ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 30.7543ms
+Request finished in 147.9834ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 24.1655ms
+Request finished in 117.3657ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 106.6196ms
+Request finished in 326.0378ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 45.172ms
+Request finished in 167.1208ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 28.5465ms
+Request finished in 146.7161ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 21.9902ms
+Request finished in 95.0881ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 26.4543ms
+Request finished in 80.7773ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 29.555ms
+Request finished in 148.0736ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 41.5846ms
+Request finished in 170.8557ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 25.5328ms
+Request finished in 58.0865ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 45.991ms
+Request finished in 126.6965ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 57.1892ms
+Request finished in 189.6167ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 29.4654ms
+Request finished in 125.7776ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 29.4303ms
+Request finished in 105.5123ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 43.7108ms
+Request finished in 161.8318ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 21.6579ms
+Request finished in 63.517ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 19.6576ms
+Request finished in 91.4586ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 39.3444ms
+Request finished in 314.8331ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 30.2335ms
+Request finished in 187.2609ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 30.0909ms
+Request finished in 119.6124ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Logout application/x-www-form-urlencoded 225
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.AccountController.Logout (Course_Project) with arguments ((null)) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.Logout (Course_Project) in 137.8812ms
+Request finished in 197.618ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 17.9112ms
+Request finished in 40.9915ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 65.754ms
+Request finished in 215.8631ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 504.1419ms
+Request finished in 543.139ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=dkYX-QAAAAAA57R3AAABYzVmS4Q&oauth_verifier=UObwBT6IPrHB2SQEYQYxeyyImfrRpkj5  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 419.4141ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (35ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (4ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (5ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (3ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (5ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 407.794ms
+Request finished in 444.2133ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 26.1578ms
+Request finished in 84.3345ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 28.1667ms
+Request finished in 74.2734ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 59.4067ms
+Request finished in 225.458ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 27.1685ms
+Request finished in 91.4316ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.HomeController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Home/Index.cshtml.
+Executed action Course_Project.Controllers.HomeController.Index (Course_Project) in 6953.6346ms
+Request finished in 7473.044ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1928.7295ms
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Request finished in 1987.3011ms 200 text/html; charset=utf-8
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 34.4308ms
+Request finished in 138.7347ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 242.829ms
+Request finished in 334.9137ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 32.2836ms
+Request finished in 71.1548ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 29.3346ms
+Request finished in 101.8324ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 25.9552ms
+Request finished in 69.6083ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 24.0483ms
+Request finished in 120.333ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 32.4246ms
+Request finished in 75.1895ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 29.2234ms
+Request finished in 102.9777ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 481.303ms
+Request finished in 553.286ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 319.8455ms
+Request finished in 366.3843ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 84.7553ms
+Request finished in 174.6949ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 29.5902ms
+Request finished in 141.3741ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 22.7902ms
+Request finished in 60.1176ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 32.2555ms
+Request finished in 96.1939ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 55.0365ms
+Request finished in 140.25ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 25.0001ms
+Request finished in 228.3507ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 25.1017ms
+Request finished in 249.3313ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 25.9266ms
+Request finished in 131.8332ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 27.0388ms
+Request finished in 64.888ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 21.3036ms
+Request finished in 68.9001ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 25.8137ms
+Request finished in 61.4427ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 21.0843ms
+Request finished in 78.2578ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 74.5197ms
+Request finished in 337.1031ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 108.5271ms
+Request finished in 401.7881ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 40.8997ms
+Request finished in 295.8512ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 32.5904ms
+Request finished in 504.3374ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 82.4935ms
+Request finished in 196.0752ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 68.0104ms
+Request finished in 165.3295ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 26.3101ms
+Request finished in 87.4082ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 26.5359ms
+Request finished in 76.1441ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 25.9622ms
+Request finished in 81.6811ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 35.4988ms
+Request finished in 123.9302ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 29.6312ms
+Request finished in 64.6282ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 35.4907ms
+Request finished in 245.4657ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 26.5256ms
+Request finished in 74.5181ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 22.2592ms
+Request finished in 83.8456ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 57.9114ms
+Request finished in 152.178ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 31.3134ms
+Request finished in 124.2219ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 30.7273ms
+Request finished in 75.1993ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ChangePassword  
+Executing action method Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ChangePassword.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ChangePassword (Course_Project) in 40.5653ms
+Request finished in 123.8248ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/ExternalLogins  
+Executing action method Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/ExternalLogins.cshtml.
+Executed action Course_Project.Controllers.ProfileController.ExternalLogins (Course_Project) in 20.5981ms
+Request finished in 48.3036ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 25.7451ms
+Request finished in 93.5918ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile/MyNews  
+Executing action method Course_Project.Controllers.ProfileController.MyNews (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/MyNews.cshtml.
+Executed action Course_Project.Controllers.ProfileController.MyNews (Course_Project) in 135.1316ms
+Request finished in 469.3204ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 25.4107ms
+Request finished in 76.2883ms 200 text/html; charset=utf-8
