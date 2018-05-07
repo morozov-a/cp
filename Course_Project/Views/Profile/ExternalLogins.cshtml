@@ -4,7 +4,7 @@
     ViewData["Title"] = "Manage your external logins";
     ViewData.AddActivePage(Course_Project.Views.Profile.ManageNavPages.ExternalLogins);
 }
-@*@Html.Partial("_StatusMessage", Model.StatusMessage)
+@Html.Partial("_StatusMessage", Model.StatusMessage)
 @if (Model.CurrentLogins?.Count > 0)
 {
     <h4>Registered Logins</h4>
@@ -49,5 +49,4 @@
             </p>
         </div>
     </form>
-}*@
-<p>I'mhere!</p>
+}

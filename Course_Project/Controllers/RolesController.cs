@@ -15,6 +15,8 @@ namespace Course_Project.Controllers
     {
         RoleManager<IdentityRole> _roleManager;
         UserManager<ApplicationUser> _userManager;
+        
+
         public RolesController(RoleManager<IdentityRole> roleManager, UserManager<ApplicationUser> userManager)
         {
             _roleManager = roleManager;
@@ -104,5 +106,83 @@ namespace Course_Project.Controllers
 
             return NotFound();
         }
+
+        [HttpGet]
+        public async Task<IActionResult> BlockUser(string userId)
+        {
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                ChangeRoleViewModel model = new ChangeRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserName = user.UserName,
+                };
+                return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> BlockUser(string userId,int timeOfBlock)
+        {
+            // получаем пользователя
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.LockoutEnabled = true;
+                user.LockoutEnd = DateTime.Now.AddMinutes(timeOfBlock);
+                await _userManager.UpdateAsync(user);
+                return RedirectToAction("UserList");
+            }
+
+            return NotFound();
+        }
+        [HttpGet]
+        public async Task<IActionResult> UnblockUser(string userId)
+        {
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                user.LockoutEnd = null;
+                await _userManager.UpdateAsync(user);
+                return RedirectToAction("UserList");
+            }
+            return NotFound();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> DeleteUser(string userId)
+        {
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                ChangeRoleViewModel model = new ChangeRoleViewModel
+                {
+                    UserId = user.Id,
+                    UserEmail = user.Email,
+                    UserName = user.UserName,
+                };
+
+                return View(model);
+            }
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ConfirmDeleteUser(string userId)
+        {
+            // получаем пользователя
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            if (user != null)
+            {
+                await _userManager.DeleteAsync(user);
+                return RedirectToAction("UserList");
+            }
+
+            return NotFound();
+        }
+
     }
 }

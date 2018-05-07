@@ -1,0 +1,12 @@
+﻿@using Microsoft.AspNetCore.Identity
+@model Course_Project.ViewModels.ChangeRoleViewModel
+<h2>Удаление пользователя @Model.UserName</h2>
+<form asp-action="ConfirmDeleteUser" method="post">
+    <input type="hidden" name="userId" value="@Model.UserId" />
+    <div class="form-group">
+        <label>Вы уверены, что хотите удалить данного пользователя?</label>
+        <button type="submit" class="btn btn-primary">Да</button>
+        <a class="btn btn-sm btn-primary" asp-action="UserList">Отмена</a>
+    </div>
+    
+</form>
