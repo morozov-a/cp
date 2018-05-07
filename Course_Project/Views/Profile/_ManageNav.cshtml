@@ -1,16 +1,18 @@
 ﻿@using Course_Project.Views.Profile
 @inject SignInManager<ApplicationUser> SignInManager
+
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+
 }
 
 <ul class="nav nav-pills nav-stacked">
-    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-action="Index" >Профиль</a></li>
-    <li class="@ManageNavPages.MyNewsNavClass(ViewContext)"><a asp-action="MyNews">Мои новости</a></li>
-    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword" style=@ViewData["Hidden"]>Пароль</a></li>
+    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-action="Index"  asp-route-userid="@ManageNavPages.userId">Профиль</a></li>
+    <li class="@ManageNavPages.MyNewsNavClass(ViewContext)"><a asp-action="MyNews" asp-route-userid="@ManageNavPages.userId">Мои новости</a></li>
+    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword" asp-route-userid="@ManageNavPages.userId" style=@ManageNavPages.Hidden>Пароль</a></li>
     @if (hasExternalLogins)
     {
-        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins" style=@ViewData["Hidden"]>Социальные сети</a></li>
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins" asp-route-userid="@ManageNavPages.userId" style=@ManageNavPages.Hidden>Социальные сети</a></li>
     }
 
 </ul>

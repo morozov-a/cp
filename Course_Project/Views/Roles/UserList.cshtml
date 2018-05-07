@@ -21,7 +21,7 @@
         </td>
             @if (@user.LockoutEnd != null && user.LockoutEnd > DateTime.Now)
             {
-                <td>Блокировка закончится:@user.LockoutEnd</td>
+                <td>Блокировка закончится:@user.LockoutEnd</td> 
              }
         </tr>
     }

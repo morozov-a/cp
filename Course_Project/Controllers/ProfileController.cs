@@ -8,6 +8,7 @@ using Course_Project.Data;
 using Course_Project.Models;
 using Course_Project.Models.ProfileViewModels;
 using Course_Project.Services;
+using Course_Project.Views.Profile;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -24,7 +25,7 @@ namespace Course_Project.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
         private readonly UrlEncoder _urlEncoder;
-
+  
         private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
         private const string RecoveryCodesKey = nameof(RecoveryCodesKey);
         private ApplicationDbContext db;
@@ -47,16 +48,19 @@ namespace Course_Project.Controllers
         [TempData]
         public string StatusMessage { get; set; }
 
+
         [HttpGet]
         public async Task<IActionResult> Index(string userId)
         {
             ApplicationUser user = await _userManager.FindByIdAsync(userId);
             var currentUser = await _userManager.GetUserAsync(User);
+            ManageNavPages.userId = userId;
+            ManageNavPages.currentUserId = currentUser.Id;
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-
+           
             var model = new IndexViewModel
             {
                 UserId = user.Id,
@@ -73,6 +77,8 @@ namespace Course_Project.Controllers
             {
                 ViewData["Disabled"] = "disabled";
                 ViewData["Hidden"] = "display:none";
+                ManageNavPages.Disabled = "disabled";
+                ManageNavPages.Hidden = "display:none";
             }
             return View(model);
         }
@@ -120,7 +126,7 @@ namespace Course_Project.Controllers
 
 
             StatusMessage = "Your profile has been updated";
-            return RedirectToAction("Index", "Manage", new { userId = user.Id });
+            return RedirectToAction("Index", "Profile", new { userId = user.Id });
         }
 
         [HttpPost]
@@ -153,9 +159,12 @@ namespace Course_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ChangePassword()
+        public async Task<IActionResult> ChangePassword(string userId)
         {
-            var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            var currentUser = await _userManager.GetUserAsync(User);
+            ManageNavPages.userId = userId;
+            ManageNavPages.currentUserId = currentUser.Id;
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -167,7 +176,7 @@ namespace Course_Project.Controllers
                 return RedirectToAction(nameof(SetPassword));
             }
 
-            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage };
+            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage , UserId=userId};
             return View(model);
         }
 
@@ -201,9 +210,12 @@ namespace Course_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SetPassword()
+        public async Task<IActionResult> SetPassword(string userId)
         {
-            var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(userId);
+            var currentUser = await _userManager.GetUserAsync(User);
+            ManageNavPages.userId = userId;
+            ManageNavPages.currentUserId = currentUser.Id;
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
