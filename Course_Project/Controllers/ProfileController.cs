@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
 using Course_Project.Data;
 using Course_Project.Models;
 using Course_Project.Models.ProfileViewModels;
 using Course_Project.Services;
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -121,22 +123,248 @@ namespace Course_Project.Controllers
             return RedirectToAction("Index", "Manage", new { userId = user.Id });
         }
 
-        public IActionResult ChangePassword()
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SendVerificationEmail(IndexViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+            var callbackUrl = Url.Action(
+                   "ConfirmEmail",
+                   "Account",
+                   new { userId = user.Id, code = code },
+                   protocol: HttpContext.Request.Scheme);
+            EmailService emailService = new EmailService();
+            await emailService.SendEmailAsync(model.Email, "Confirm your account",
+                $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>ссылка</a>");
+
+            StatusMessage = "Verification email sent. Please check your email.";
+            return RedirectToAction(nameof(Index));
         }
 
-        public IActionResult SetPassword()
+        [HttpGet]
+        public async Task<IActionResult> ChangePassword()
         {
-            return View();
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var hasPassword = await _userManager.HasPasswordAsync(user);
+            if (!hasPassword)
+            {
+                return RedirectToAction(nameof(SetPassword));
+            }
+
+            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage };
+            return View(model);
         }
-        public IActionResult ExternalLogins()
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> ChangePassword(ChangePasswordViewModel model)
         {
-            return View();
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var changePasswordResult = await _userManager.ChangePasswordAsync(user, model.OldPassword, model.NewPassword);
+            if (!changePasswordResult.Succeeded)
+            {
+                AddErrors(changePasswordResult);
+                return View(model);
+            }
+
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            _logger.LogInformation("User changed their password successfully.");
+            StatusMessage = "Your password has been changed.";
+
+            return RedirectToAction(nameof(ChangePassword));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> SetPassword()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var hasPassword = await _userManager.HasPasswordAsync(user);
+
+            if (hasPassword)
+            {
+                return RedirectToAction(nameof(ChangePassword));
+            }
+
+            var model = new SetPasswordViewModel { StatusMessage = StatusMessage };
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> SetPassword(SetPasswordViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var addPasswordResult = await _userManager.AddPasswordAsync(user, model.NewPassword);
+            if (!addPasswordResult.Succeeded)
+            {
+                AddErrors(addPasswordResult);
+                return View(model);
+            }
+
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            StatusMessage = "Your password has been set.";
+
+            return RedirectToAction(nameof(SetPassword));
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> ExternalLogins()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var model = new ExternalLoginsViewModel { CurrentLogins = await _userManager.GetLoginsAsync(user) };
+            model.OtherLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync())
+                .Where(auth => model.CurrentLogins.All(ul => auth.Name != ul.LoginProvider))
+                .ToList();
+            model.ShowRemoveButton = await _userManager.HasPasswordAsync(user) || model.CurrentLogins.Count > 1;
+            model.StatusMessage = StatusMessage;
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> LinkLogin(string provider)
+        {
+            // Clear the existing external cookie to ensure a clean login process
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
+            // Request a redirect to the external login provider to link a login for the current user
+            var redirectUrl = Url.Action(nameof(LinkLoginCallback));
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl, _userManager.GetUserId(User));
+            return new ChallengeResult(provider, properties);
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> LinkLoginCallback()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var info = await _signInManager.GetExternalLoginInfoAsync(user.Id);
+            if (info == null)
+            {
+                throw new ApplicationException($"Unexpected error occurred loading external login info for user with ID '{user.Id}'.");
+            }
+
+            var result = await _userManager.AddLoginAsync(user, info);
+            if (!result.Succeeded)
+            {
+                throw new ApplicationException($"Unexpected error occurred adding external login for user with ID '{user.Id}'.");
+            }
+
+            // Clear the existing external cookie to ensure a clean login process
+            await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
+
+            StatusMessage = "The external login was added.";
+            return RedirectToAction(nameof(ExternalLogins));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> RemoveLogin(RemoveLoginViewModel model)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+            {
+                throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
+            }
+
+            var result = await _userManager.RemoveLoginAsync(user, model.LoginProvider, model.ProviderKey);
+            if (!result.Succeeded)
+            {
+                throw new ApplicationException($"Unexpected error occurred removing external login for user with ID '{user.Id}'.");
+            }
+
+            await _signInManager.SignInAsync(user, isPersistent: false);
+            StatusMessage = "The external login was removed.";
+            return RedirectToAction(nameof(ExternalLogins));
         }
         public IActionResult MyNews()
         {
             return View();
         }
+
+
+
+        #region Helpers
+
+        private void AddErrors(IdentityResult result)
+        {
+            foreach (var error in result.Errors)
+            {
+                ModelState.AddModelError(string.Empty, error.Description);
+            }
+        }
+
+        private string FormatKey(string unformattedKey)
+        {
+            var result = new StringBuilder();
+            int currentPosition = 0;
+            while (currentPosition + 4 < unformattedKey.Length)
+            {
+                result.Append(unformattedKey.Substring(currentPosition, 4)).Append(" ");
+                currentPosition += 4;
+            }
+            if (currentPosition < unformattedKey.Length)
+            {
+                result.Append(unformattedKey.Substring(currentPosition));
+            }
+
+            return result.ToString().ToLowerInvariant();
+        }
+
+
+
+        #endregion
+       
     }
 }

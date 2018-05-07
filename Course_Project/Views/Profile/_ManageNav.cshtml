@@ -5,12 +5,12 @@
 }
 
 <ul class="nav nav-pills nav-stacked">
-    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-action="Index">Профиль</a></li>
+    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-action="Index" >Профиль</a></li>
     <li class="@ManageNavPages.MyNewsNavClass(ViewContext)"><a asp-action="MyNews">Мои новости</a></li>
-    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword">Пароль</a></li>
+    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a asp-action="ChangePassword" style=@ViewData["Hidden"]>Пароль</a></li>
     @if (hasExternalLogins)
     {
-        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins">Социальные сети</a></li>
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a asp-action="ExternalLogins" style=@ViewData["Hidden"]>Социальные сети</a></li>
     }
 
 </ul>
