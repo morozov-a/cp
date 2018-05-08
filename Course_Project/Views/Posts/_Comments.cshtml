@@ -1,0 +1,59 @@
+﻿@model Course_Project.Models.PostViewModels.PostViewModel
+@inject UserManager<ApplicationUser> UserManager
+@using Course_Project.Data
+@inject ApplicationDbContext _context
+<section id="comments">
+    <div class="container">
+        <h2>Comments</h2>
+        @foreach (var comment in _context.Comments)
+        {
+            if (comment.PostId.Trim() == Model.ParentId.Trim() && Model.Comments.SingleOrDefault(m => m.Id == comment.Id) == null)
+            {
+                Model.Comments.Add(comment);
+            }
+        }
+        @if (Model.Comments.Count == 0)
+        {
+            <p>Be the first to post a comment</p>
+        }
+        else
+        {
+            foreach (var comment in Model.Comments.OrderBy(a => a.CreatedDate))
+            {
+
+                <img src=@comment.Author.ProfilePicture class="img-circle" alt="Pikcha" height="50" width="50" />
+                <label>@comment.Text</label>
+                @Html.Raw(comment.CreatedDate)
+                <br />
+                <strong> @Html.Raw(comment.Author.UserName)</strong>
+                <div>
+                    <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.ParentId" method="post">
+                        @Html.Raw(comment.Likes)
+                        <button type="submit" class="btn btn-link">
+                            <span class="glyphicon glyphicon-heart"></span>
+                        </button>
+                    </form>
+                </div>
+                <br />
+                <br />
+
+            }
+        }
+    </div>
+</section>
+@if (User.IsInRole("Admin") || User.IsInRole("Author"))
+{
+    <form asp-action="AddComment" asp-route-postid="@ViewContext.RouteData.Values["id"]" asp-antiforgery="false">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="input-group">
+                    <input asp-for="Comment" type="text" class="form-control" placeholder="Write your comment" required />
+                    <span class="input-group-btn">
+                        <input type="submit" value="Submit" class="btn btn-default" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    </form>
+}
+

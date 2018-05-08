@@ -85,5 +85,23 @@ namespace Course_Project.Controllers
             }
             return View(post);
         }
+
+        [AllowAnonymous]
+        public async Task<IActionResult> Details(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var post = await _context.Posts.Include(a => a.Author).SingleOrDefaultAsync(m => m.Id == id);
+
+            if (post == null)
+            {
+                return NotFound();
+            }
+
+            return View(post);
+        }
     }
 }
