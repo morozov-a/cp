@@ -1,5 +1,5 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@model Course_Project.ViewModels.ChangeRoleViewModel
+@model Course_Project.Models.ChangeRoleViewModel
 <h2>Блокировка пользователя @Model.UserName</h2>
 <form asp-action="BlockUser" method="post">
     <input type="hidden" name="userId" value="@Model.UserId" />
