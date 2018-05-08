@@ -33,7 +33,7 @@ namespace Course_Project.Controllers
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
           IEmailSender emailSender,
-          ILogger<ManageController> logger,
+          ILogger<ProfileController> logger,
           ApplicationDbContext context,
           UrlEncoder urlEncoder)
         {
@@ -155,7 +155,7 @@ namespace Course_Project.Controllers
                 $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>ссылка</a>");
 
             StatusMessage = "Verification email sent. Please check your email.";
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction("Index", "Profile", new { userId = user.Id });
         }
 
         [HttpGet]
