@@ -9,13 +9,17 @@
   <ItemGroup>
     <PackageReference Include="AspNet.Security.OAuth.VK" Version="0.0.1" />
     <PackageReference Include="Brik.Security.VkontakteMiddleware" Version="2.0.2" />
+    <PackageReference Include="Imgur.API" Version="4.0.1" />
     <PackageReference Include="MailKit" Version="2.0.3" />
+    <PackageReference Include="Markdown" Version="2.2.1" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.Twitter" Version="2.0.3" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.2" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="2.0.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="2.0.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.3" PrivateAssets="All" />
+    <PackageReference Include="RotativaCore" Version="2.1.1" />
+    <PackageReference Include="WkWrap.Core" Version="1.0.2" />
   </ItemGroup>
 
   <ItemGroup>

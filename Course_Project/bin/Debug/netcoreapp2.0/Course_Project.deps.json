@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "dd873a93e7774709ee0df9c0669dcaa7d1201ca6"
+    "signature": "0e939c0db2ce89aa84c6c7f500c7db086acab9e3"
   },
   "compilationOptions": {
     "defines": [
@@ -25,14 +25,18 @@
         "dependencies": {
           "AspNet.Security.OAuth.VK": "0.0.1",
           "Brik.Security.VkontakteMiddleware": "2.0.2",
+          "Imgur.API": "4.0.1",
           "MailKit": "2.0.3",
+          "Markdown": "2.2.1",
           "Microsoft.AspNetCore.All": "2.0.7",
           "Microsoft.AspNetCore.Authentication.Twitter": "2.0.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "2.0.2",
           "Microsoft.Extensions.Configuration.UserSecrets": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3"
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
+          "RotativaCore": "2.1.1",
+          "WkWrap.Core": "1.0.2"
         },
         "runtime": {
           "Course_Project.dll": {}
@@ -70,6 +74,18 @@
         },
         "compile": {
           "lib/netstandard2.0/Brik.Security.VkontakteMiddleware.dll": {}
+        }
+      },
+      "Imgur.API/4.0.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "Newtonsoft.Json": "10.0.3"
+        },
+        "runtime": {
+          "lib/netstandard1.1/Imgur.API.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.1/Imgur.API.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -131,6 +147,19 @@
         },
         "compile": {
           "lib/netstandard2.0/MailKit.dll": {}
+        }
+      },
+      "Markdown/2.2.1": {
+        "dependencies": {
+          "System.Collections": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Text.RegularExpressions": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Markdown.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Markdown.dll": {}
         }
       },
       "Microsoft.ApplicationInsights/2.4.0": {
@@ -2591,6 +2620,18 @@
           "lib/netstandard1.0/Remotion.Linq.dll": {}
         }
       },
+      "RotativaCore/2.1.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Cookies": "2.0.3",
+          "Microsoft.AspNetCore.Mvc": "2.0.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/RotativaCore.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/RotativaCore.dll": {}
+        }
+      },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
         "runtimeTargets": {
           "runtime/debian.8-x64/native/_._": {
@@ -3120,6 +3161,45 @@
         "runtimeTargets": {
           "runtime/unix/lib/_._": {
             "rid": "unix",
+            "assetType": "runtime"
+          },
+          "runtime/win/lib/_._": {
+            "rid": "win",
+            "assetType": "runtime"
+          }
+        }
+      },
+      "System.Diagnostics.Process/4.3.0": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "2.0.0",
+          "Microsoft.Win32.Primitives": "4.3.0",
+          "Microsoft.Win32.Registry": "4.4.0",
+          "System.Collections": "4.3.0",
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.IO.FileSystem": "4.3.0",
+          "System.IO.FileSystem.Primitives": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.Handles": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Text.Encoding": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Thread": "4.3.0",
+          "System.Threading.ThreadPool": "4.3.0",
+          "runtime.native.System": "4.3.0"
+        },
+        "runtimeTargets": {
+          "runtime/linux/lib/_._": {
+            "rid": "linux",
+            "assetType": "runtime"
+          },
+          "runtime/osx/lib/_._": {
+            "rid": "osx",
             "assetType": "runtime"
           },
           "runtime/win/lib/_._": {
@@ -4195,6 +4275,18 @@
           "lib/netstandard1.3/Microsoft.WindowsAzure.Storage.dll": {}
         }
       },
+      "WkWrap.Core/1.0.2": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0",
+          "System.Diagnostics.Process": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.4/WkWrap.Core.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.4/WkWrap.Core.dll": {}
+        }
+      },
       "Microsoft.NETCore.App/2.0.0": {
         "dependencies": {
           "Microsoft.NETCore.DotNetHostPolicy": "2.0.0",
@@ -4393,6 +4485,13 @@
       "path": "brik.security.vkontaktemiddleware/2.0.2",
       "hashPath": "brik.security.vkontaktemiddleware.2.0.2.nupkg.sha512"
     },
+    "Imgur.API/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fgg9Y0FQVw0RXeztVkbhFyIuc4SbxEDu7uTRPmes58jNpti5p3HW3dD1H4OtYB67stZbmWbiTwyx2Qm1/m8e6w==",
+      "path": "imgur.api/4.0.1",
+      "hashPath": "imgur.api.4.0.1.nupkg.sha512"
+    },
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
@@ -4406,6 +4505,13 @@
       "sha512": "sha512-RrTVzkpJFbtcYYlT73pucCksr/tAK+Ec6MSGpsGpACanwBozj3X/S1OrGd7I9kn45bJxr/0+dIslXTnsNvWowQ==",
       "path": "mailkit/2.0.3",
       "hashPath": "mailkit.2.0.3.nupkg.sha512"
+    },
+    "Markdown/2.2.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-A6veXuFP1n50RbmFNtTgfHxnHmwMsgFLSCgS1xWbg5L8n5N6HFEksTlXocZ0LsmGW4leBzeLJd+BY7+g83zFJA==",
+      "path": "markdown/2.2.1",
+      "hashPath": "markdown.2.2.1.nupkg.sha512"
     },
     "Microsoft.ApplicationInsights/2.4.0": {
       "type": "package",
@@ -5646,6 +5752,13 @@
       "path": "remotion.linq/2.1.1",
       "hashPath": "remotion.linq.2.1.1.nupkg.sha512"
     },
+    "RotativaCore/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-kUb7hJsip4bRTAqQ3g5B5dPhz4e+9K8o+5yfiOnUSiH74MVC1dM5H69LI9CDm2dstZbY/+bxvbJxsscTKGZBeg==",
+      "path": "rotativacore/2.1.1",
+      "hashPath": "rotativacore.2.1.1.nupkg.sha512"
+    },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.0": {
       "type": "package",
       "serviceable": true,
@@ -6009,6 +6122,13 @@
       "sha512": "sha512-omCF64wzQ3Q2CeIqkD6lmmxeMZtGHUmzgFMPjfVaOsyqpR66p/JaZzManMw1s33osoAb5gqpncsjie67+yUPHQ==",
       "path": "system.diagnostics.fileversioninfo/4.3.0",
       "hashPath": "system.diagnostics.fileversioninfo.4.3.0.nupkg.sha512"
+    },
+    "System.Diagnostics.Process/4.3.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-J0wOX07+QASQblsfxmIMFc9Iq7KTXYL3zs2G/Xc704Ylv3NpuVdo6gij6V3PGiptTxqsK0K7CdXenRvKUnkA2g==",
+      "path": "system.diagnostics.process/4.3.0",
+      "hashPath": "system.diagnostics.process.4.3.0.nupkg.sha512"
     },
     "System.Diagnostics.StackTrace/4.3.0": {
       "type": "package",
@@ -6562,6 +6682,13 @@
       "sha512": "sha512-W6ZZ0/o7+3Qb77mRAQyLjPudHG3OMeeQ4p9yY13PUdJArmRCx2cLMm5F4tpIjJXxzHC0ew0oK7DMDGILMdfCnw==",
       "path": "windowsazure.storage/8.1.4",
       "hashPath": "windowsazure.storage.8.1.4.nupkg.sha512"
+    },
+    "WkWrap.Core/1.0.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-9lQN4iZkz7SoDcXyxOzgpmJ4FcPlN1ZD2SRi2OmV7eB/qv7LW58ZUZtkZQIdYvtGjwKZ4rNhXfFwnE6d2icKgA==",
+      "path": "wkwrap.core/1.0.2",
+      "hashPath": "wkwrap.core.1.0.2.nupkg.sha512"
     },
     "Microsoft.NETCore.App/2.0.0": {
       "type": "package",

@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 using Course_Project.Models;
 using Course_Project.Models.AccountViewModels;
 using Course_Project.Services;
+using Course_Project.Data;
 
 namespace Course_Project.Controllers
 {
@@ -22,17 +23,20 @@ namespace Course_Project.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private readonly ApplicationDbContext _context;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext context,
             IEmailSender emailSender,
             ILogger<AccountController> logger)
         {
             _userManager = userManager;
             _signInManager = signInManager;
+            _context = context;
             _emailSender = emailSender;
             _logger = logger;
         }
@@ -111,7 +115,8 @@ namespace Course_Project.Controllers
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Username, Email = model.Email };
+                var img = await _context.Source.FindAsync("DefaultUser");
+                var user = new ApplicationUser { UserName = model.Username, Email = model.Email, ProfilePicture = img.Picture };
                 var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
@@ -139,7 +144,7 @@ namespace Course_Project.Controllers
         {
             await _signInManager.SignOutAsync();
             _logger.LogInformation("User logged out.");
-            return RedirectToAction(nameof(HomeController.Index), "Home");
+            return RedirectToAction(nameof(PostsController.Index), "Posts");
         }
 
         [HttpPost]
@@ -203,7 +208,8 @@ namespace Course_Project.Controllers
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
-                var user = new ApplicationUser { UserName = model.Username, Email = model.Email, EmailConfirmed = true };
+                var img = await _context.Source.FindAsync("DefaultUser");
+                var user = new ApplicationUser { UserName = model.Username, ProfilePicture = img.Picture, Email = model.Email, EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -228,7 +234,7 @@ namespace Course_Project.Controllers
         {
             if (userId == null || code == null)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(PostsController.Index), "Posts");
             }
             var user = await _userManager.FindByIdAsync(userId);
             if (user == null)
@@ -353,7 +359,7 @@ namespace Course_Project.Controllers
             }
             else
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(PostsController.Index), "Posts");
             }
         }
 

@@ -50,12 +50,11 @@ namespace Course_Project.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Index(string userId)
+        public async Task<IActionResult> Index()
         {
-            ApplicationUser user = await _userManager.FindByIdAsync(userId);
-            var currentUser = await _userManager.GetUserAsync(User);
-            ManageNavPages.userId = userId;
-            ManageNavPages.currentUserId = currentUser.Id;
+           
+            var user = await _userManager.GetUserAsync(User);
+            
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -73,13 +72,7 @@ namespace Course_Project.Controllers
                 StatusMessage = StatusMessage
 
             };
-            if (!(await _userManager.IsInRoleAsync(currentUser, "admin")) && currentUser.Id != user.Id)
-            {
-                ViewData["Disabled"] = "disabled";
-                ViewData["Hidden"] = "display:none";
-                ManageNavPages.Disabled = "disabled";
-                ManageNavPages.Hidden = "display:none";
-            }
+            
             return View(model);
         }
 
@@ -126,7 +119,7 @@ namespace Course_Project.Controllers
 
 
             StatusMessage = "Your profile has been updated";
-            return RedirectToAction("Index", "Profile", new { userId = user.Id });
+            return RedirectToAction("Index", "Profile");
         }
 
         [HttpPost]
@@ -159,12 +152,11 @@ namespace Course_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ChangePassword(string userId)
+        public async Task<IActionResult> ChangePassword()
         {
-            ApplicationUser user = await _userManager.FindByIdAsync(userId);
-            var currentUser = await _userManager.GetUserAsync(User);
-            ManageNavPages.userId = userId;
-            ManageNavPages.currentUserId = currentUser.Id;
+           
+            var user = await _userManager.GetUserAsync(User);
+           
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -176,7 +168,7 @@ namespace Course_Project.Controllers
                 return RedirectToAction(nameof(SetPassword));
             }
 
-            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage , UserId=userId};
+            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage};
             return View(model);
         }
 
@@ -210,12 +202,11 @@ namespace Course_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> SetPassword(string userId)
+        public async Task<IActionResult> SetPassword()
         {
-            ApplicationUser user = await _userManager.FindByIdAsync(userId);
-            var currentUser = await _userManager.GetUserAsync(User);
-            ManageNavPages.userId = userId;
-            ManageNavPages.currentUserId = currentUser.Id;
+            
+            var user = await _userManager.GetUserAsync(User);
+            
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
