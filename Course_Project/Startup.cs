@@ -20,6 +20,8 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 using Brik.Security.VkontakteMiddleware;
 using Microsoft.AspNetCore.Authentication.OAuth;
+using Microsoft.AspNetCore.Authentication;
+using System.Security.Claims;
 
 namespace Course_Project
 {
@@ -72,10 +74,10 @@ namespace Course_Project
                     vk.TokenEndpoint = "https://oauth.vk.com/access_token";
                     vk.UserInformationEndpoint = "https://api.vk.com/method/users.get.json";
                     vk.Scope.Add("email");
-                   
+
 
                 });
-            //services.AddVkontakteAuthentication();
+
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();

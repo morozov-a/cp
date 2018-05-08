@@ -11,9 +11,10 @@ using System;
 namespace Course_Project.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180508082036_PostAdd2")]
+    partial class PostAdd2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,10 +86,10 @@ namespace Course_Project.Data.Migrations
 
             modelBuilder.Entity("Course_Project.Models.PostViewModels.CategoryViewModel", b =>
                 {
-                    b.Property<string>("CategoryName")
+                    b.Property<string>("GenreName")
                         .ValueGeneratedOnAdd();
 
-                    b.HasKey("CategoryName");
+                    b.HasKey("GenreName");
 
                     b.ToTable("Categories");
                 });
@@ -141,14 +142,14 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<string>("AuthorId");
 
-                    b.Property<string>("Category");
-
                     b.Property<string>("Comment");
 
                     b.Property<string>("Content")
                         .IsRequired();
 
                     b.Property<DateTime>("CreatedDate");
+
+                    b.Property<string>("Genre");
 
                     b.Property<DateTime>("LastModified");
 

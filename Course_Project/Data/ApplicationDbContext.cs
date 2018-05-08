@@ -5,11 +5,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Course_Project.Models;
+using Course_Project.Models.PostViewModels;
 
 namespace Course_Project.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        public DbSet<PostViewModel> Posts { get; set; }
+
+        public DbSet<CommentViewModel> Comments { get; set; }
+
+        public DbSet<CategoryViewModel> Categories { get; set; }
+
+        public DbSet<DefaultViewModel> Source { get; set; }
+
+        public DbSet<TagViewModel> Tags { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

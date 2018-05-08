@@ -7,6 +7,7 @@
 
 
   <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.VK" Version="0.0.1" />
     <PackageReference Include="Brik.Security.VkontakteMiddleware" Version="2.0.2" />
     <PackageReference Include="MailKit" Version="2.0.3" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.7" />

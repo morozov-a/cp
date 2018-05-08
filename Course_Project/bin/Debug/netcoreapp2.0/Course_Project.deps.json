@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "0947804f37d0338e9a45653d18c0dc045d070879"
+    "signature": "dd873a93e7774709ee0df9c0669dcaa7d1201ca6"
   },
   "compilationOptions": {
     "defines": [
@@ -23,6 +23,7 @@
     ".NETCoreApp,Version=v2.0": {
       "Course_Project/1.0.0": {
         "dependencies": {
+          "AspNet.Security.OAuth.VK": "0.0.1",
           "Brik.Security.VkontakteMiddleware": "2.0.2",
           "MailKit": "2.0.3",
           "Microsoft.AspNetCore.All": "2.0.7",
@@ -46,6 +47,17 @@
         },
         "compile": {
           "Course_Project.dll": {}
+        }
+      },
+      "AspNet.Security.OAuth.VK/0.0.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Authentication.OAuth": "2.0.3"
+        },
+        "runtime": {
+          "lib/netcoreapp2.0/AspNet.Security.OAuth.VK.dll": {}
+        },
+        "compile": {
+          "lib/netcoreapp2.0/AspNet.Security.OAuth.VK.dll": {}
         }
       },
       "Brik.Security.VkontakteMiddleware/2.0.2": {
@@ -4366,6 +4378,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "AspNet.Security.OAuth.VK/0.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Jj1ZqAhWLTv+G4+SWCdMSwirwekE10LZbWocesHVaWxiOGPkFThtvG2CI47hOsJf/RLXTW3F2hf7gIGO1X9wag==",
+      "path": "aspnet.security.oauth.vk/0.0.1",
+      "hashPath": "aspnet.security.oauth.vk.0.0.1.nupkg.sha512"
     },
     "Brik.Security.VkontakteMiddleware/2.0.2": {
       "type": "package",
