@@ -103,5 +103,35 @@ namespace Course_Project.Controllers
 
             return View(post);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddComment(string postId, PostViewModel post)
+        {
+            var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
+            _context.Comments.Add(new CommentViewModel()
+            {
+                Text = post.Comment,
+                CreatedDate = DateTime.UtcNow,
+                Author = await _userManager.GetUserAsync(User),
+                PostId = commentedPost.ParentId,
+            });
+            _context.SaveChanges();
+            return Redirect("Details/" + postId);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> AddLike(string Id, string postId)
+        {
+
+            var comment = _context.Comments.Include(a => a.Author).Include(a => a.Liked).SingleOrDefault(m => m.Id == Id);
+            foreach (var user in comment.Liked.Where(a => a.Id == _userManager.GetUserId(User)))
+            {
+                return RedirectToAction("Details/" + postId);
+            }
+            comment.Likes += 1;
+            comment.Liked.Add(await _userManager.GetUserAsync(User));
+            _context.SaveChanges();
+            return RedirectToAction("Details/" + postId);
+        }
     }
 }
