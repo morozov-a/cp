@@ -27,6 +27,7 @@ namespace Course_Project.Controllers
     [Authorize]
     public class ProfileController : Controller
     {
+        private readonly ApplicationDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
         private readonly IEmailSender _emailSender;
@@ -35,7 +36,7 @@ namespace Course_Project.Controllers
   
         private const string AuthenticatorUriFormat = "otpauth://totp/{0}:{1}?secret={2}&issuer={0}&digits=6";
         private const string RecoveryCodesKey = nameof(RecoveryCodesKey);
-        private ApplicationDbContext db;
+        
         public ProfileController(
           UserManager<ApplicationUser> userManager,
           SignInManager<ApplicationUser> signInManager,
@@ -49,7 +50,7 @@ namespace Course_Project.Controllers
             _emailSender = emailSender;
             _logger = logger;
             _urlEncoder = urlEncoder;
-            db = context;
+            _context = context;
         }
 
         [TempData]
@@ -121,7 +122,7 @@ namespace Course_Project.Controllers
 
             if (model.Firstname != user.FirstName) { user.FirstName = model.Firstname; }
             if (model.Lastname != user.LastName) { user.LastName = model.Lastname; }
-            db.Users.Update(user); await db.SaveChangesAsync();
+            _context.Users.Update(user); await _context.SaveChangesAsync();
 
 
 
@@ -338,10 +339,8 @@ namespace Course_Project.Controllers
             StatusMessage = "The external login was removed.";
             return RedirectToAction(nameof(ExternalLogins));
         }
-        public IActionResult MyNews()
-        {
-            return View();
-        }
+        public IActionResult MyNews() => View(_context);
+        
 
         public async Task UploadImageAsync(IList<IFormFile> files)
         {

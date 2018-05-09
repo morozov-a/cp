@@ -1,7 +1,38 @@
-﻿@model Course_Project.Models.ProfileViewModels.MyNewsViewModel
+﻿
 @using static Course_Project.Views.Profile.ManageNavPages
 @{
     ViewData["Title"] = "Manage your external logins";
     ViewData.AddActivePage(Course_Project.Views.Profile.ManageNavPages.MyNews);
 }
-<p>Здесь будет реализация работы с новостями</p>
+
+@using Course_Project.Data
+@model ApplicationDbContext
+@inject UserManager<ApplicationUser> UserManager
+<h2>My content</h2>
+<table class="table">
+    @foreach (var post in Model.Posts)
+    {
+        if (post.Id != null && await UserManager.GetUserAsync(User) == post.Author)
+        {
+
+            <tr>
+                <td>
+                    <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">@post.Title</a>
+                    @if (post.Id == post.ParentId)
+                    {
+                        <img src=@post.Picture alt="Pikcha" height="50" width="50" />
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-sm btn-primary" asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id">Edit</a>
+                    @if (post.Id == post.ParentId)
+                    {
+                        <a class="btn btn-success" asp-controller="Posts" asp-action="AddChapter" asp-route-id="@post.Id">Add new chapter</a>
+                    }
+                    <a class="btn btn-danger" asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id">Delete</a>
+                </td>
+            </tr>
+
+        }
+    }
+</table>
