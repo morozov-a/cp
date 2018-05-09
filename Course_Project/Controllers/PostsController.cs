@@ -171,5 +171,92 @@ namespace Course_Project.Controllers
             }
             return null;
         }
+
+        public async Task<IActionResult> Edit(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var article = await _context.Posts.SingleOrDefaultAsync(m => m.Id == id);
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            return View(article);
+        }
+
+
+        [HttpPost]
+        public async Task<IActionResult> Edit(PostViewModel post)
+        {
+
+            var parentPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == post.Id);
+            if (post.TagString != null)
+            {
+                char[] delimeterChars = { ' ', ',' };
+                string[] words = post.TagString.Split(delimeterChars);
+                foreach (var word in words)
+                {
+                    if (await _context.Tags.FindAsync(word) == null)
+                        post.Tags.Add(new TagViewModel() { Name = word });
+                }
+            }
+            parentPost.Content = post.Content;
+            parentPost.Category = post.Category;
+            parentPost.Abstract = post.Abstract;
+            parentPost.TagString = post.TagString;
+            parentPost.Title = post.Title;
+            parentPost.LastModified = DateTime.UtcNow;
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public async Task<IActionResult> Delete(string id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var article = await _context.Posts.SingleOrDefaultAsync(m => m.Id == id);
+            if (article == null)
+            {
+                return NotFound();
+            }
+
+            return View(article);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(string id)
+        {
+
+            var article = await _context.Posts.Include(a => a.Tags).Include(a => a.Comments).Include(a => a.Author).SingleOrDefaultAsync(m => m.Id == id);
+            foreach (var comment in article.Comments)
+            {
+                _context.Remove(comment);
+            }
+            if (article.ParentId == article.Id)
+            {
+                foreach (var remove in _context.Posts)
+                {
+                    if (remove.ParentId == article.Id)
+                    {
+                        _context.Posts.Remove(remove);
+                    }
+                }
+                _context.Posts.Remove(article);
+            }
+            else
+            {
+                _context.Posts.Remove(article);
+            }
+            await _context.SaveChangesAsync();
+            return RedirectToAction("Index");
+        }
     }
 }
