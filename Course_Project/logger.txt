@@ -37834,3 +37834,1376 @@ SELECT [c].[CategoryName]
 FROM [Categories] AS [c]
 Executed action Course_Project.Controllers.PostsController.Details (Course_Project) in 108.2972ms
 Request finished in 185.6164ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (25ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 5693.5689ms
+Request finished in 5819.819ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (142ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 18294.5764ms
+Request finished in 18945.1464ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1745.1035ms
+Request finished in 1903.7788ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 200
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Facebook, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Facebook).
+AuthenticationScheme: Facebook was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 118.2859ms
+Request finished in 148.6092ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-facebook?code=AQCUtQBgBueefA427og0HS3I4UE_na1ys4-RIDe_JjYIZPxBg6mB2PbXWj08O72nTH5h7vy_GNdAPIrO3wqnw0B94FqBTvv5Q4Qf70lKKCg-4iagLZ4NjLkkATHZs0kuuBfZbEKtflh54eTxQKUqV9Rb5ccEY9-_isyruR4FsLbEZxq5z2uAy874gGNB_8WYAh0UpXUDy5OHTapkJig5BBjcR7ShXFVoNLVcUR2ZXwmkqKYotR_GbtgSH_y1LbxRwpp4-tjZ6oVEis5WqeUnjQBueHHFJp84EpOMvvKoYgvkczVO7JbS1BTJa-rubmGPj4BTgbPrArcXewXxXdLhMWBR&state=CfDJ8F7AOuPBojRBkDxEktSPxmrUDQ3lVbkLDUDYhEt3rUAmxipXOaTOUvCQXytmJjUZVHOm2j-17UlLnZKYpXRYpUSadkbtMPHj1LPr45jG9MkKFe2jdpFgn2d65aqE52I0-ExP6WdIBrkoKS6gUINsga_Q6QKXULA6SyS3BixEzeccrqy_XccBgSUQLi6tkEoBx4rkjgTOvGPnbZlP_oWIVE1M679eszmGwRYPhLtihdUXreJyk2xzY1nRfg9OV8n_PVJNf0I1W2kY81QSJVFlfH0  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 688.5316ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (36ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (22ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (7ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (24ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Facebook provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 669.7311ms
+Request finished in 702.8564ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (28ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 767.1931ms
+An unhandled exception has occurred while executing the request
+Request finished in 1610.3858ms 500 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (160ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 20772.2985ms
+Request finished in 21597.6983ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2466.5892ms
+Request finished in 2556.0093ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 1196.47ms
+Request finished in 1264.1861ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=xiuCDgAAAAAA57R3AAABY0PEC6c&oauth_verifier=UCZ3NPzaKfzufAkYlXnAIJDEuulVlpTU  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 1041.8867ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (75ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (10ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (184ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (16ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (12ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (3ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 1186.7983ms
+Request finished in 1227.5771ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (21ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 364.9622ms
+Request finished in 560.7657ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Logout application/x-www-form-urlencoded 225
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.AccountController.Logout (Course_Project) with arguments ((null)) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.Logout (Course_Project) in 130.1292ms
+Request finished in 185.0892ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (16ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 127.2251ms
+Request finished in 215.9062ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (130ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (5ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 17203.0177ms
+Request finished in 17800.6647ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (12ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2078.2969ms
+Request finished in 2270.8932ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 235
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (27ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 805c67e3-bf02-4413-8c43-1c3a86ebe505.
+User 805c67e3-bf02-4413-8c43-1c3a86ebe505 failed to provide the correct password.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 707.9818ms
+An unhandled exception has occurred while executing the request
+Request finished in 1472.8938ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 78.5902ms
+Request finished in 351.3056ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (170ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 12710.3252ms
+Request finished in 13283.6289ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1230.1722ms
+Request finished in 1343.3507ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 235
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Invalid password for user 805c67e3-bf02-4413-8c43-1c3a86ebe505.
+User 805c67e3-bf02-4413-8c43-1c3a86ebe505 failed to provide the correct password.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 376.4868ms
+Request finished in 453.5375ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Login application/x-www-form-urlencoded 234
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments (Course_Project.Models.AccountViewModels.LoginViewModel, ) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (20ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (14ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (58ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+AuthenticationScheme: Identity.Application signed in.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1403.4647ms
+Request finished in 1456.8392ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (17ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 163.5856ms
+Request finished in 610.1093ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Logout application/x-www-form-urlencoded 225
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: ggggggg.
+Executing action method Course_Project.Controllers.AccountController.Logout (Course_Project) with arguments ((null)) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.Logout (Course_Project) in 98.7795ms
+Request finished in 146.7553ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (10ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 71.6995ms
+Request finished in 95.9089ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (171ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 16742.6035ms
+Request finished in 17406.56ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1903.9711ms
+Request finished in 2133.9219ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 1007.9776ms
+Request finished in 1079.7025ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=0bZkdgAAAAAA57R3AAABY0PMhYk&oauth_verifier=xNDsmV84R2NooPe5LN3GynPX9Cgqy4On  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 669.6344ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (362ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (12ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (24ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (92ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (10ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (6ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 1216.7959ms
+Request finished in 1279.8691ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (14ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 265.5853ms
+Request finished in 328.4715ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (6ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 2214.6702ms
+Request finished in 2609.4605ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (228ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (27ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 15609.5653ms
+Request finished in 16660.9308ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (542ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2339.3937ms
+Request finished in 2494.4859ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 3257.102ms
+Request finished in 3362.2483ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=PQceWAAAAAAA57R3AAABY0PVsFM&oauth_verifier=KANlO908GcB9n6Dsa72HFjfxPbUjV7da  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 397.0882ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (569ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (489ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (257ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (85ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (510ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (259ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 4206.0142ms
+Request finished in 4260.6122ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (129ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (14ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 362.3574ms
+Request finished in 801.4772ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (768ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (205ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 3689.0534ms
+Request finished in 4041.6641ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (731ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (440ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 18398.2982ms
+Request starting HTTP/1.1 GET http://localhost:44343/lib/dropzone/dist/basic.css  
+Request starting HTTP/1.1 GET http://localhost:44343/js/dropzone.js  
+Request finished in 19428.0938ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/lib/dropzone/dist/dropzone.css  
+Sending file. Request path: '/lib/dropzone/dist/basic.css'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\dropzone\dist\basic.css'
+Sending file. Request path: '/lib/dropzone/dist/dropzone.css'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\dropzone\dist\dropzone.css'
+Request finished in 801.2697ms 404 
+Request finished in 1085.3594ms 200 text/css
+Request finished in 1425.0109ms 200 text/css
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1762.0591ms
+Request finished in 2028.6827ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/js/dropzone.js  
+Request finished in 319.3357ms 404 
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 790.5204ms
+Request finished in 991.662ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=7S2sywAAAAAA57R3AAABY0Pb_iI&oauth_verifier=PjzpCH4NqPzhkodILlza5iERd7jS6xCm  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 1484.1558ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (782ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (157ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (565ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (337ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (192ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (24ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 4773.4524ms
+Request finished in 4854.8193ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (503ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (6ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 728.8128ms
+Request finished in 957.8874ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/js/dropzone.js  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 204.2077ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (271ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (588ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 2771.3764ms
+Request finished in 2932.3756ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/js/dropzone.js  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 114.6499ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (322ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (81ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1702.3897ms
+Request finished in 1904.9613ms 200 text/html; charset=utf-8
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (704ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (20ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 16866.589ms
+Request starting HTTP/1.1 GET http://localhost:44343/js/dropzone.js  
+Request finished in 17849.2709ms 200 text/html; charset=utf-8
+Sending file. Request path: '/js/dropzone.js'. Physical path: 'D:\cp\Course_Project\wwwroot\js\dropzone.js'
+Request finished in 430.1703ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (32ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 4763.4555ms
+Request finished in 4937.2514ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 933.6202ms
+Request finished in 995.7356ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=rnZAXAAAAAAA57R3AAABY0Pl-j0&oauth_verifier=O69Dhx671paRpTXGk3FvbBoPokGRksky  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 1029.197ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (209ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (15ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (76ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (100ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (239ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (4ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 3027.3862ms
+Request finished in 3154.493ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (12ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 141.4808ms
+Request finished in 305.0503ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (850ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 4320.0574ms
+Request finished in 4820.8729ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Image/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryIi5FYS3VOjnSSgty 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 69.0698ms 404 
+Request starting HTTP/1.1 POST http://localhost:44343/Image/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryjpijAzXBODBADRyP 23474
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 225.5298ms 404 
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (575ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (56ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 17534.1314ms
+Request finished in 18437.9772ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (632ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 2019.7203ms
+Request finished in 2279.666ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 199
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Twitter, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Twitter).
+AuthenticationScheme: Twitter was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 1017.0572ms
+Request finished in 1143.5892ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-twitter?oauth_token=P4UJWgAAAAAA57R3AAABY0Pvadw&oauth_verifier=t1NlbaYOEgSG32RHBCQp8aUM26cP66zz  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 720.516ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (680ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (470ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (414ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (276ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (328ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (278ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Twitter provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 5720.4236ms
+Request finished in 5803.6968ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (183ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (17ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 3538.3913ms
+Request finished in 4063.7133ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1914.2424ms
+Request finished in 2010.7342ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Image/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryt3k2pySUBkibLvgi 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 312.304ms 404 
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 357
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments (Course_Project.Models.ProfileViewModels.IndexViewModel) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (77ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executing RedirectResult, redirecting to /Profile.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 723.393ms
+Request finished in 807.617ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (1ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 101.6739ms
+Request finished in 129.367ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Image/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundary3h0BW4umJiG8QrKr 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 99.7302ms 404 
+Request starting HTTP/1.1 POST http://localhost:44343/Image/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryUQ9QQTBcB9NhP5kt 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Request finished in 302.7453ms 404 
+Request starting HTTP/1.1 GET http://localhost:44343/lib/bootstrap/dist/css/bootstrap.css.map  
+Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.css.map'. Physical path: 'D:\cp\Course_Project\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map'
+Request finished in 683.511ms 200 text/plain
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (39ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 694.989ms
+Request finished in 990.2176ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (21ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 1341.1607ms
+Request finished in 1488.2121ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryzBgAvTtFlncysBh9 23474
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (14ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (27ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+Executed DbCommand (74ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executed action Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) in 3148.4369ms
+Request finished in 3392.9022ms 200 
+Processing request {0}
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (433ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (13ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 13719.6954ms
+Request finished in 15056.1862ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 2742.9508ms
+Request finished in 2844.2406ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryWwRlhgDOj0zqxYRv 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (10ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (4ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (4ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+Executed DbCommand (135ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executed action Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) in 5338.9173ms
+Request finished in 5509.015ms 200 
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 357
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments (Course_Project.Models.ProfileViewModels.IndexViewModel) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (10ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executing RedirectResult, redirecting to /Profile.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 243.6069ms
+Request finished in 319.9554ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (4ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 85.0337ms
+Request finished in 128.555ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (66ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 226.2299ms
+Request finished in 358.0261ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (15ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 131.7724ms
+Request finished in 352.2158ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundaryExKsdsMjHYl8A0SO 532713
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (5ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (6ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+Executed DbCommand (14ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executed action Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) in 3800.0797ms
+Request finished in 3886.2916ms 200 
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 357
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments (Course_Project.Models.ProfileViewModels.IndexViewModel) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (101ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executing RedirectResult, redirecting to /Profile.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 204.5065ms
+Request finished in 285.895ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 106.3455ms
+Request finished in 225.6448ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (9ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 99.9776ms
+Request finished in 402.7273ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/Logout application/x-www-form-urlencoded 225
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: lekph_mauk.
+Executing action method Course_Project.Controllers.AccountController.Logout (Course_Project) with arguments ((null)) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.Logout (Course_Project) in 255.4993ms
+Request finished in 316.3063ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (17ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 127.4358ms
+Request finished in 185.8406ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Account/Login  
+Executing action method Course_Project.Controllers.AccountController.Login (Course_Project) with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executing ViewResult, running view at path /Views/Account/Login.cshtml.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.AccountController.Login (Course_Project) in 1193.2137ms
+Request finished in 1387.1832ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Account/ExternalLogin application/x-www-form-urlencoded 200
+Executing action method Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) with arguments (Facebook, ) - ModelState is Valid
+Executing ChallengeResult with authentication schemes (Facebook).
+AuthenticationScheme: Facebook was challenged.
+Executed action Course_Project.Controllers.AccountController.ExternalLogin (Course_Project) in 67.0949ms
+Request finished in 157.7423ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/signin-facebook?code=AQDi9zFER1d82qb7iRwKjp1I_9gvROinHh-8UZRLfDnbzfPKrhBvq6rkBQhRpU-jCDUlcNHsbMkxZ0MB6adR4xPw5dDhuJMvZd55DJYdmMmwMyCx5rBRaQj2SDuWNhG5t-qhoM30nG7KsZ0lNTR6teo3_xnVisnQtCeGdn0SHK5tgz7m5LSkk5kXPZl91K0Lcj2Dm6eDTk_nce8JgJ9ZZ3LEI9wdQZu7T3tEMeXaBPjU0BNUw80beuWo4JEdP_vnXbHGUPpcugEU2v35Ft1Cg2OzLqtox165f3XtF3hkGh1ja38S7RuTjuMcriuKf7BmrJZELWEFL_K_qwj9oHYCQEUG&state=CfDJ8F7AOuPBojRBkDxEktSPxmqIsMq7cbah0kB3LZB-jtCRFLx2ba005y_4KOwNtvk7G0yfwUXENl7H1Ft-fxYBOj-oRHgEcObTVpweJVsdGLLftkmMpilIP7MEOstllh0PbFJ8pPnf6UcFIVHi30-v1jUOvpUQwsoeayi58uZEjXMOI9UNwCdq_BstGz-CIcByxdKifjH4cv73vC2GnAh0rW2BLH-s77rB-3E4zulTGXcOXfbqnHwPbeT4Mf6C9nlhsLxuvA2AFwKRd3cvLkuYb-U  
+AuthenticationScheme: Identity.External signed in.
+Request finished in 397.7202ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Account/ExternalLoginCallback  
+Executing action method Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) with arguments (, ) - ModelState is Valid
+AuthenticationScheme: Identity.External was successfully authenticated.
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (26ms) [Parameters=[@__loginProvider_0='?' (Size = 450), @__providerKey_1='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [userLogin].[LoginProvider], [userLogin].[ProviderKey], [userLogin].[ProviderDisplayName], [userLogin].[UserId]
+FROM [AspNetUserLogins] AS [userLogin]
+WHERE ([userLogin].[LoginProvider] = @__loginProvider_0) AND ([userLogin].[ProviderKey] = @__providerKey_1)
+Executed DbCommand (4ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[Id] = @__userId_0
+AuthenticationScheme: Identity.External signed out.
+Executed DbCommand (3ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0
+Executed DbCommand (31ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0
+Executed DbCommand (5ms) [Parameters=[@__normalizedName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [r].[Id], [r].[ConcurrencyStamp], [r].[Name], [r].[NormalizedName]
+FROM [AspNetRoles] AS [r]
+WHERE [r].[NormalizedName] = @__normalizedName_0
+Executed DbCommand (5ms) [Parameters=[@__role_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [rc].[ClaimType], [rc].[ClaimValue]
+FROM [AspNetRoleClaims] AS [rc]
+WHERE [rc].[RoleId] = @__role_Id_0
+AuthenticationScheme: Identity.Application signed in.
+User logged in with Facebook provider.
+Executing RedirectResult, redirecting to /.
+Executed action Course_Project.Controllers.AccountController.ExternalLoginCallback (Course_Project) in 497.1647ms
+Request finished in 528.7456ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (10ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 106.4459ms
+Request finished in 455.2218ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (8ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 81.2669ms
+Request finished in 147.7158ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44343/Profile/UploadImageAsync multipart/form-data; boundary=----WebKitFormBoundary03qJ2KWaoAXldlrL 23474
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) with arguments (System.Collections.Generic.List`1[Microsoft.AspNetCore.Http.IFormFile]) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (9ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (8ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0
+Executed DbCommand (7ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[CommentViewModelId], [u].[ConcurrencyStamp], [u].[Culture], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[LastName], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[PasswordHash], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[ProfilePicture], [u].[SecurityStamp], [u].[Theme], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedEmail] = @__normalizedEmail_0
+Executed DbCommand (77ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executed action Course_Project.Controllers.ProfileController.UploadImageAsync (Course_Project) in 2583.2886ms
+Request finished in 2713.6144ms 200 
+Request starting HTTP/1.1 POST http://localhost:44343/Profile application/x-www-form-urlencoded 341
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments (Course_Project.Models.ProfileViewModels.IndexViewModel) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (3ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executed DbCommand (13ms) [Parameters=[@p20='?' (Size = 450), @p0='?', @p1='?' (Size = 450), @p2='?' (Size = 4000), @p21='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 256), @p5='?', @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?' (Size = 256), @p11='?' (Size = 256), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?', @p15='?' (Size = 4000), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?', @p19='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [CommentViewModelId] = @p1, [ConcurrencyStamp] = @p2, [Culture] = @p3, [Email] = @p4, [EmailConfirmed] = @p5, [FirstName] = @p6, [LastName] = @p7, [LockoutEnabled] = @p8, [LockoutEnd] = @p9, [NormalizedEmail] = @p10, [NormalizedUserName] = @p11, [PasswordHash] = @p12, [PhoneNumber] = @p13, [PhoneNumberConfirmed] = @p14, [ProfilePicture] = @p15, [SecurityStamp] = @p16, [Theme] = @p17, [TwoFactorEnabled] = @p18, [UserName] = @p19
+WHERE [Id] = @p20 AND [ConcurrencyStamp] = @p21;
+SELECT @@ROWCOUNT;
+Executing RedirectResult, redirecting to /Profile.
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 261.4058ms
+Request finished in 345.3472ms 302 
+Request starting HTTP/1.1 GET http://localhost:44343/Profile  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Authorization was successful for user: KatyaMorozova.
+Executing action method Course_Project.Controllers.ProfileController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executed DbCommand (11ms) [Parameters=[@__get_Item_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [e].[Id], [e].[AccessFailedCount], [e].[CommentViewModelId], [e].[ConcurrencyStamp], [e].[Culture], [e].[Email], [e].[EmailConfirmed], [e].[FirstName], [e].[LastName], [e].[LockoutEnabled], [e].[LockoutEnd], [e].[NormalizedEmail], [e].[NormalizedUserName], [e].[PasswordHash], [e].[PhoneNumber], [e].[PhoneNumberConfirmed], [e].[ProfilePicture], [e].[SecurityStamp], [e].[Theme], [e].[TwoFactorEnabled], [e].[UserName]
+FROM [AspNetUsers] AS [e]
+WHERE [e].[Id] = @__get_Item_0
+Executing ViewResult, running view at path /Views/Profile/Index.cshtml.
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.ProfileController.Index (Course_Project) in 270.621ms
+Request finished in 846.6537ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44343/  
+AuthenticationScheme: Identity.Application was successfully authenticated.
+Executing action method Course_Project.Controllers.PostsController.Index (Course_Project) with arguments ((null)) - ModelState is Valid
+Entity Framework Core 2.0.2-rtm-10011 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+Executing ViewResult, running view at path /Views/Posts/Index.cshtml.
+Executed DbCommand (9ms) [Parameters=[@__p_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(@__p_0) [a].[Id], [a].[Abstract], [a].[AuthorId], [a].[Category], [a].[Comment], [a].[Content], [a].[CreatedDate], [a].[LastModified], [a].[ParentId], [a].[Picture], [a].[TagString], [a].[Title], [a.Author].[Id], [a.Author].[AccessFailedCount], [a.Author].[CommentViewModelId], [a.Author].[ConcurrencyStamp], [a.Author].[Culture], [a.Author].[Email], [a.Author].[EmailConfirmed], [a.Author].[FirstName], [a.Author].[LastName], [a.Author].[LockoutEnabled], [a.Author].[LockoutEnd], [a.Author].[NormalizedEmail], [a.Author].[NormalizedUserName], [a.Author].[PasswordHash], [a.Author].[PhoneNumber], [a.Author].[PhoneNumberConfirmed], [a.Author].[ProfilePicture], [a.Author].[SecurityStamp], [a.Author].[Theme], [a.Author].[TwoFactorEnabled], [a.Author].[UserName]
+FROM [Posts] AS [a]
+LEFT JOIN [AspNetUsers] AS [a.Author] ON [a].[AuthorId] = [a.Author].[Id]
+ORDER BY [a].[LastModified] DESC
+Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[CategoryName]
+FROM [Categories] AS [c]
+Executed action Course_Project.Controllers.PostsController.Index (Course_Project) in 106.9516ms
+Request finished in 191.0643ms 200 text/html; charset=utf-8

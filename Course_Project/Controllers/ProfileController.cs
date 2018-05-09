@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -9,8 +11,13 @@ using Course_Project.Models;
 using Course_Project.Models.ProfileViewModels;
 using Course_Project.Services;
 using Course_Project.Views.Profile;
+using Imgur.API;
+using Imgur.API.Authentication.Impl;
+using Imgur.API.Endpoints.Impl;
+using Imgur.API.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
@@ -334,6 +341,41 @@ namespace Course_Project.Controllers
         public IActionResult MyNews()
         {
             return View();
+        }
+
+        public async Task UploadImageAsync(IList<IFormFile> files)
+        {
+
+            try
+            {
+                var user = await _userManager.GetUserAsync(User);
+                var client = new ImgurClient("556830a80ac5829", "9438948e5e7df4b5151a61b882626c499ef4925e");
+                var endpoint = new ImageEndpoint(client);
+                IImage image;
+                foreach (var file in files)
+                {
+                    if (file.Length > 0)
+                    {
+                        
+                        using (var fileStream = file.OpenReadStream())
+                        using (var ms = new MemoryStream())
+                        {
+                            fileStream.CopyTo(ms);
+                            var fileBytes = ms.ToArray();
+                            string s = Convert.ToBase64String(fileBytes);
+                            image = await endpoint.UploadImageBinaryAsync(fileBytes);
+                        }
+                        Debug.Write("Image uploaded. Image Url: " + image.Link);
+                        user.ProfilePicture = image.Link;
+                        await _userManager.UpdateAsync(user);
+                    }
+                }
+            }
+            catch (ImgurException imgurEx)
+            {
+                Debug.Write("An error occurred uploading an image to Imgur.");
+                Debug.Write(imgurEx.Message);
+            }
         }
 
 

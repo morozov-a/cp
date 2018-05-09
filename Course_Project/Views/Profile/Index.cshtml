@@ -8,6 +8,16 @@
 }
 <h4></h4>
 @Html.Partial("_StatusMessage", Model.StatusMessage)
+<div class="form-group">
+    <label class="control-label">Изменить фото</label>
+    <div id="dropzone">
+        <form action="/Image/UploadImageAsync" class="dropzone needsclick dz-clickable" id="uploader">
+            <div class="dz-message needsclick">
+                ДРАГ ЭНД ДРОП<br>
+            </div>
+        </form>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-6">
         <form method="post">
@@ -48,11 +58,31 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <input asp-for="UserId" type="hidden" name="userId" />
-            <button type="submit" class="btn btn-default" >Save</button>
+            <button id="button" type="submit" class="btn btn-default" >Save</button>
         </form>
     </div>
 </div>
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
+<script>Dropzone.autoDiscover = false;
+        var myDropzone = new Dropzone('#uploader', {
+            url: '/Profile/UploadImageAsync',
+            maxFilesize: 5,
+            maxFiles: 1,
+            uploadMultiple: false,
+            parallelUploads: 1,
+            acceptedFiles: "image/*",
+            autoProcessQueue: true,
+            init: function () {
+                var startUpload = document.getElementById("button");
+                myDropzone = this;
+                startUpload.addEventListener("click", function () {
+                    myDropzone.processQueue();
+                });
+                this.on("success", function () {
+                    myDropzone.options.autoProcessQueue = true;
+                });
+            }
+        });</script>
 

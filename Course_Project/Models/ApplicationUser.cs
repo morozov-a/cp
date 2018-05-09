@@ -14,5 +14,7 @@ namespace Course_Project.Models
         public string Theme { get; set; }
         public string Culture { get; set; }
         public string ProfilePicture { get; set; }
+
+
     }
 }
