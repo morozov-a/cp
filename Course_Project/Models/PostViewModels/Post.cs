@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Course_Project.Models.PostViewModels
 {
-    public class PostViewModel
+    public class Post
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
@@ -16,10 +16,8 @@ namespace Course_Project.Models.PostViewModels
         public string Category { get; set; }
 
         public string TagString { get; set; }
-
-        public string ParentId { get; set; }
         
-        public List<TagViewModel> Tags { get; set; } = new List<TagViewModel>();
+        public List<Tag> Tags { get; set; } = new List<Tag>();
 
         [Required]
         public string Title { get; set; }
@@ -31,7 +29,7 @@ namespace Course_Project.Models.PostViewModels
 
         public string Comment { get; set; }
 
-        public List<CommentViewModel> Comments { get; set; } = new List<CommentViewModel>();
+        public List<Comment> Comments { get; set; } = new List<Comment>();
 
         public ApplicationUser Author { get; set; }
 

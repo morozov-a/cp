@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Course_Project.Models.PostViewModels
 {
-    public class CategoryViewModel
+    public class Category
     {
         [Key]
         public string CategoryName { get; set; }

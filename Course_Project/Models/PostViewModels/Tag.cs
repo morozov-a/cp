@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace Course_Project.Models.PostViewModels
 {
-    public class DefaultViewModel
+    public class Tag
     {
-        public string Id { get; set; }
-        public string Picture { get; set; }
+        public string Id { get; set; } = Guid.NewGuid().ToString();
+
+        public string Name { get; set; }
     }
 }

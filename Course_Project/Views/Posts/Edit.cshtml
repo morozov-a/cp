@@ -1,4 +1,4 @@
-﻿@model Course_Project.Models.PostViewModels.PostViewModel
+﻿@model Course_Project.Models.PostViewModels.Post
 @using Course_Project.Data
 @inject ApplicationDbContext contetxt
 @{
@@ -9,7 +9,7 @@
 <div style="margin-left:200px">
     <label class="control-label ">"NewPhoto"</label>
     <div id="dropzone">
-        <form action="/Posts/UploadImageAsync?id=@Model.ParentId" class="dropzone needsclick dz-clickable" id="uploader">
+        <form action="/Posts/UploadImageAsync?id=@Model.Id" class="dropzone needsclick dz-clickable" id="uploader">
             <div class="dz-message needsclick">
                 "DragNDrop"<br>
             </div>
@@ -20,8 +20,7 @@
 <form asp-action="Edit">
     <div class="form-horizontal">
 
-        @if (Model.Id == Model.ParentId)
-        {
+      
 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -69,33 +68,8 @@
 
                 </div>
             </div>
-        }
-        else
-        {
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <br />
-                <label asp-for="Title" class="col-md-2 control-label"></label>
-                <div class="col-md-3">
-                    <input asp-for="Title" value="@Model.Title" class="form-control" />
-                    <span asp-validation-for="Title" class="text-danger" />
-                </div>
-                <br />
-                <br />
-                <br />
-                <div class="form-group">
-                    <label asp-for="Content" class="col-md-2 control-label"></label>
-                    <div class="col-md-10">
-                        <textarea asp-for="Content" class="form-control" rows="20">{@Model.Content}</textarea>
-                        <span asp-validation-for="Content" class="text-danger" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                    </div>
-                </div>
-            </div>
-        }
+        
+       
         <input type="submit" value="Edit" class="btn btn-default" />
     </div>
 </form>
@@ -109,7 +83,7 @@
     <script>
             Dropzone.autoDiscover = false;
             var myDropzone = new Dropzone('#uploader', {
-                url: '/Posts/UploadImageAsync?id=@Model.ParentId',
+                url: '/Posts/UploadImageAsync?id=@Model.Id',
                 maxFilesize: 5,
                 maxFiles: 1,
                 uploadMultiple: false,

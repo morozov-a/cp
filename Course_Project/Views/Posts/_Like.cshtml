@@ -1,4 +1,4 @@
-﻿@model Course_Project.Models.PostViewModels.PostViewModel
+﻿@model Course_Project.Models.PostViewModels.Post
 
 <section id="like">
 @foreach (var comment in Model.Comments.OrderBy(a => a.CreatedDate))
@@ -10,7 +10,7 @@
     <br />
     <strong> @Html.Raw(comment.Author.UserName)</strong>
     <div>
-        <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.ParentId" data-ajax="true" data-ajax-method="POST" data-ajax-update="#like">
+        <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.Id" data-ajax="true" data-ajax-method="POST" data-ajax-update="#like">
             @Html.Raw(comment.Likes)
             <button type="submit" class="btn btn-link">
                 <span class="glyphicon glyphicon-heart"></span>

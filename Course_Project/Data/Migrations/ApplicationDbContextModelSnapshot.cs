@@ -27,7 +27,7 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("CommentViewModelId");
+                    b.Property<string>("CommentId");
 
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
@@ -72,7 +72,7 @@ namespace Course_Project.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CommentViewModelId");
+                    b.HasIndex("CommentId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -85,7 +85,7 @@ namespace Course_Project.Data.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.CategoryViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Category", b =>
                 {
                     b.Property<string>("CategoryName")
                         .ValueGeneratedOnAdd();
@@ -95,7 +95,7 @@ namespace Course_Project.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.CommentViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Comment", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -108,8 +108,6 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<string>("PostId");
 
-                    b.Property<string>("PostViewModelId");
-
                     b.Property<string>("Text")
                         .IsRequired();
 
@@ -117,12 +115,12 @@ namespace Course_Project.Data.Migrations
 
                     b.HasIndex("AuthorId");
 
-                    b.HasIndex("PostViewModelId");
+                    b.HasIndex("PostId");
 
                     b.ToTable("Comments");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.DefaultViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Default", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -134,7 +132,7 @@ namespace Course_Project.Data.Migrations
                     b.ToTable("Source");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.PostViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Post", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -154,8 +152,6 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<DateTime>("LastModified");
 
-                    b.Property<string>("ParentId");
-
                     b.Property<string>("Picture");
 
                     b.Property<string>("TagString");
@@ -170,18 +166,18 @@ namespace Course_Project.Data.Migrations
                     b.ToTable("Posts");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.TagViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Tag", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
 
                     b.Property<string>("Name");
 
-                    b.Property<string>("PostViewModelId");
+                    b.Property<string>("PostId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PostViewModelId");
+                    b.HasIndex("PostId");
 
                     b.ToTable("Tags");
                 });
@@ -296,34 +292,34 @@ namespace Course_Project.Data.Migrations
 
             modelBuilder.Entity("Course_Project.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("Course_Project.Models.PostViewModels.CommentViewModel")
+                    b.HasOne("Course_Project.Models.PostViewModels.Comment")
                         .WithMany("Liked")
-                        .HasForeignKey("CommentViewModelId");
+                        .HasForeignKey("CommentId");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.CommentViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Comment", b =>
                 {
                     b.HasOne("Course_Project.Models.ApplicationUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 
-                    b.HasOne("Course_Project.Models.PostViewModels.PostViewModel")
+                    b.HasOne("Course_Project.Models.PostViewModels.Post")
                         .WithMany("Comments")
-                        .HasForeignKey("PostViewModelId");
+                        .HasForeignKey("PostId");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.PostViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Post", b =>
                 {
                     b.HasOne("Course_Project.Models.ApplicationUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.PostViewModels.TagViewModel", b =>
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Tag", b =>
                 {
-                    b.HasOne("Course_Project.Models.PostViewModels.PostViewModel")
+                    b.HasOne("Course_Project.Models.PostViewModels.Post")
                         .WithMany("Tags")
-                        .HasForeignKey("PostViewModelId");
+                        .HasForeignKey("PostId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

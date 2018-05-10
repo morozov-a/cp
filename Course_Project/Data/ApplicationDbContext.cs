@@ -11,15 +11,15 @@ namespace Course_Project.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
-        public DbSet<PostViewModel> Posts { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
-        public DbSet<CommentViewModel> Comments { get; set; }
+        public DbSet<Comment> Comments { get; set; }
 
-        public DbSet<CategoryViewModel> Categories { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
-        public DbSet<DefaultViewModel> Source { get; set; }
+        public DbSet<Default> Source { get; set; }
 
-        public DbSet<TagViewModel> Tags { get; set; }
+        public DbSet<Tag> Tags { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)

@@ -41,7 +41,7 @@ namespace Course_Project.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Posts.Include(a => a.Author);
-            return View(/*await applicationDbContext.ToListAsync()*/);
+            return View(await applicationDbContext.ToListAsync());
         }
 
         [AllowAnonymous]
@@ -58,7 +58,7 @@ namespace Course_Project.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Title, Abstract,Content,Category,TagString")] PostViewModel post)
+        public async Task<IActionResult> Create([Bind("Title, Abstract,Content,Category,TagString")] Post post)
         {
             if (ModelState.IsValid)
             {
@@ -68,7 +68,7 @@ namespace Course_Project.Controllers
                     string[] words = post.TagString.Split(delimeterChars);
                     foreach (var word in words)
                     {
-                        post.Tags.Add(new TagViewModel() { Name = word });
+                        post.Tags.Add(new Tag() { Name = word });
                     }
                 }
                 if (post.Picture == null)
@@ -77,7 +77,6 @@ namespace Course_Project.Controllers
                     post.Picture = img.Picture;
                 }
                 post.LastModified = DateTime.UtcNow;
-                post.ParentId = post.Id;
                 post.Author = await _userManager.GetUserAsync(User);
                 post.CreatedDate = DateTime.UtcNow;
                 _context.Add(post);
@@ -96,10 +95,6 @@ namespace Course_Project.Controllers
             }
 
             var post = await _context.Posts.Include(a => a.Author).SingleOrDefaultAsync(m => m.Id == id);
-            foreach (CommentViewModel comment in _context.Comments)
-            {
-                if(comment.PostId == id) {post.Comments.Add(comment); }
-            }
             if (post == null)
             {
                 return NotFound();
@@ -109,25 +104,21 @@ namespace Course_Project.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddComment(string postId, PostViewModel post)
+        public async Task<IActionResult> AddComment(string postId, Post post)
         {
             var user = await _userManager.GetUserAsync(User);
             var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
-            _context.Comments.Add(new CommentViewModel()
+            _context.Comments.Add(new Comment()
             {
                 Text = post.Comment,
                 CreatedDate = DateTime.UtcNow,
                 Author = user,
-                PostId = post.Id
-               
+                PostId = commentedPost.Id
+
             });
             _context.SaveChanges();
-            foreach (CommentViewModel comment in _context.Comments)
-            {
-                if (comment.PostId == postId) { post.Comments.Add(comment); }
-            }
-
-            return PartialView("_CommentsBody", post);
+           
+            return PartialView("_CommentsBody", commentedPost);
         }
 
         [HttpPost]
@@ -201,7 +192,7 @@ namespace Course_Project.Controllers
 
 
         [HttpPost]
-        public async Task<IActionResult> Edit(PostViewModel post)
+        public async Task<IActionResult> Edit(Post post)
         {
 
             var parentPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == post.Id);
@@ -212,7 +203,7 @@ namespace Course_Project.Controllers
                 foreach (var word in words)
                 {
                     if (await _context.Tags.FindAsync(word) == null)
-                        post.Tags.Add(new TagViewModel() { Name = word });
+                        post.Tags.Add(new Tag() { Name = word });
                 }
             }
             parentPost.Content = post.Content;
@@ -251,21 +242,9 @@ namespace Course_Project.Controllers
             {
                 _context.Remove(comment);
             }
-            if (article.ParentId == article.Id)
-            {
-                foreach (var remove in _context.Posts)
-                {
-                    if (remove.ParentId == article.Id)
-                    {
-                        _context.Posts.Remove(remove);
-                    }
-                }
+            
                 _context.Posts.Remove(article);
-            }
-            else
-            {
-                _context.Posts.Remove(article);
-            }
+           
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }

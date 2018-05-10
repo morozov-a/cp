@@ -18,10 +18,9 @@
             <tr>
                 <td>
                     <a asp-controller="Posts" asp-action="Details" asp-route-id="@post.Id">@post.Title</a>
-                    @if (post.Id == post.ParentId)
-                    {
+                    
                         <img src=@post.Picture alt="Pikcha" height="50" width="50" />
-                    }
+                   
                 </td>
                 <td>
                     <a class="btn btn-sm btn-primary" asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id">Edit</a>

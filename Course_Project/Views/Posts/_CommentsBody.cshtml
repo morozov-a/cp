@@ -1,4 +1,4 @@
-﻿@model Course_Project.Models.PostViewModels.PostViewModel
+﻿@model Course_Project.Models.PostViewModels.Post
 @inject UserManager<ApplicationUser> UserManager
 @using Course_Project.Data
 @inject ApplicationDbContext _context
@@ -13,21 +13,22 @@
             }
         }
         @if (Model.Comments.Count == 0)
-    {
+         {
         <p>Be the first to post a comment</p>
-}
-else
-{
-    
+        }
+        else
+        {
+
+
     @foreach (var comment in Model.Comments.OrderBy(a => a.CreatedDate))
      {
-
+        var b = comment.Author.ProfilePicture;
     <img src=@comment.Author.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
     <label>@comment.Text</label>
     @Html.Raw(comment.CreatedDate)
     <br />
     
-    @*<strong> @Html.Raw(comment.Author.UserName)</strong>*@
+    <strong> @Html.Raw(comment.Author.UserName)</strong>
     <div>
         <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.Id" data-ajax="true" data-ajax-method="POST" data-ajax-update="#com">
             @Html.Raw(comment.Likes)
@@ -38,8 +39,9 @@ else
     </div>
     <br />
     <br />
-
+        
      }
+            
 }
     </div>
 </section>
