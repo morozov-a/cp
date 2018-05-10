@@ -1,0 +1,24 @@
+﻿@model Course_Project.Models.PostViewModels.PostViewModel
+
+<section id="like">
+@foreach (var comment in Model.Comments.OrderBy(a => a.CreatedDate))
+{
+
+    <img src=@comment.Author.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
+    <label>@comment.Text</label>
+    @Html.Raw(comment.CreatedDate)
+    <br />
+    <strong> @Html.Raw(comment.Author.UserName)</strong>
+    <div>
+        <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.ParentId" data-ajax="true" data-ajax-method="POST" data-ajax-update="#like">
+            @Html.Raw(comment.Likes)
+            <button type="submit" class="btn btn-link">
+                <span class="glyphicon glyphicon-heart"></span>
+            </button>
+        </form>
+    </div>
+    <br />
+    <br />
+
+}
+</section>

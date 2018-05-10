@@ -4,6 +4,7 @@
 @inject ApplicationDbContext context
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -70,6 +71,7 @@
     </div>
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/jquery-ajax-unobtrusive-master/jquery-ajax-unobtrusive-master/dist/jquery.unobtrusive-ajax.js"></script>
         <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
         <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
         <script src="~/js/site.js" asp-append-version="true"></script>
@@ -90,5 +92,6 @@
         <script src="~/js/site.min.js" asp-append-version="true"></script>
     </environment>
     @RenderSection("Scripts", required: false)
+
 </body>
 </html>

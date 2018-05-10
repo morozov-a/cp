@@ -20,6 +20,7 @@ using System.Diagnostics;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Threading;
 using System.Threading.Tasks;
 using WkWrap.Core;
 
@@ -95,7 +96,10 @@ namespace Course_Project.Controllers
             }
 
             var post = await _context.Posts.Include(a => a.Author).SingleOrDefaultAsync(m => m.Id == id);
-
+            foreach (CommentViewModel comment in _context.Comments)
+            {
+                if(comment.PostId == id) {post.Comments.Add(comment); }
+            }
             if (post == null)
             {
                 return NotFound();
@@ -107,31 +111,38 @@ namespace Course_Project.Controllers
         [HttpPost]
         public async Task<IActionResult> AddComment(string postId, PostViewModel post)
         {
+            var user = await _userManager.GetUserAsync(User);
             var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
             _context.Comments.Add(new CommentViewModel()
             {
                 Text = post.Comment,
                 CreatedDate = DateTime.UtcNow,
-                Author = await _userManager.GetUserAsync(User),
-                PostId = commentedPost.ParentId,
+                Author = user,
+                PostId = post.Id
+               
             });
             _context.SaveChanges();
-            return Redirect("Details/" + postId);
+            foreach (CommentViewModel comment in _context.Comments)
+            {
+                if (comment.PostId == postId) { post.Comments.Add(comment); }
+            }
+
+            return PartialView("_CommentsBody", post);
         }
 
         [HttpPost]
         public async Task<IActionResult> AddLike(string Id, string postId)
         {
-
+            var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
             var comment = _context.Comments.Include(a => a.Author).Include(a => a.Liked).SingleOrDefault(m => m.Id == Id);
             foreach (var user in comment.Liked.Where(a => a.Id == _userManager.GetUserId(User)))
             {
-                return RedirectToAction("Details/" + postId);
+                return PartialView("_CommentsBody", commentedPost);
             }
             comment.Likes += 1;
             comment.Liked.Add(await _userManager.GetUserAsync(User));
             _context.SaveChanges();
-            return RedirectToAction("Details/" + postId);
+            return PartialView("_CommentsBody", commentedPost);
         }
 
         public async Task<IActionResult> UploadImageAsync(IList<IFormFile> files)

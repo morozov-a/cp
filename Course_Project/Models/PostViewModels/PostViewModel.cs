@@ -30,7 +30,7 @@ namespace Course_Project.Models.PostViewModels
         public string Content { get; set; }
 
         public string Comment { get; set; }
-       
+
         public List<CommentViewModel> Comments { get; set; } = new List<CommentViewModel>();
 
         public ApplicationUser Author { get; set; }

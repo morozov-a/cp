@@ -40,6 +40,9 @@
           "lib/netstandard1.1/Imgur.API.dll": {}
         }
       },
+      "jQuery/1.8.0": {
+        "type": "package"
+      },
       "Libuv/1.10.0": {
         "type": "package",
         "dependencies": {
@@ -2495,6 +2498,12 @@
         },
         "runtime": {
           "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
+        }
+      },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+        "type": "package",
+        "dependencies": {
+          "jQuery": "1.8.0"
         }
       },
       "Microsoft.Net.Http.Headers/2.0.2": {
@@ -5310,6 +5319,22 @@
         "lib/netstandard1.1/Imgur.API.xml"
       ]
     },
+    "jQuery/1.8.0": {
+      "sha512": "laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "type": "package",
+      "path": "jquery/1.8.0",
+      "files": [
+        "Content/Scripts/jquery-1.8.0-vsdoc.js",
+        "Content/Scripts/jquery-1.8.0.js",
+        "Content/Scripts/jquery-1.8.0.min.js",
+        "Tools/common.ps1",
+        "Tools/install.ps1",
+        "Tools/jquery-1.8.0.intellisense.js",
+        "Tools/uninstall.ps1",
+        "jquery.1.8.0.nupkg.sha512",
+        "jquery.nuspec"
+      ]
+    },
     "Libuv/1.10.0": {
       "sha512": "GsCf4q+eyaI49rCPlgYxdxa1SQCysXFFdSJWdstrwxytg4+VPYLYrXD4AT2rjHVJ+UF7SSWX9CapWEYaU4ejVQ==",
       "type": "package",
@@ -7546,6 +7571,17 @@
         "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.xml",
         "microsoft.identitymodel.tokens.5.1.4.nupkg.sha512",
         "microsoft.identitymodel.tokens.nuspec"
+      ]
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+      "sha512": "NBjWsx9UwnDbyFzZHQSi79VAWLzFwB3kdmd2OMg7xvSemQoM1KK5Pu2AisyGucC22igqjlPQZiv2c82Agzlsuw==",
+      "type": "package",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.5",
+      "files": [
+        "Content/Scripts/jquery.unobtrusive-ajax.js",
+        "Content/Scripts/jquery.unobtrusive-ajax.min.js",
+        "microsoft.jquery.unobtrusive.ajax.3.2.5.nupkg.sha512",
+        "microsoft.jquery.unobtrusive.ajax.nuspec"
       ]
     },
     "Microsoft.Net.Http.Headers/2.0.2": {
@@ -13719,6 +13755,7 @@
       "Microsoft.Extensions.Configuration.UserSecrets >= 2.0.1",
       "Microsoft.NETCore.App >= 2.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.0.3",
+      "Microsoft.jQuery.Unobtrusive.Ajax >= 3.2.5",
       "RotativaCore >= 2.1.1",
       "WkWrap.Core >= 1.0.2"
     ]
@@ -13817,6 +13854,10 @@
             "suppressParent": "All",
             "target": "Package",
             "version": "[2.0.3, )"
+          },
+          "Microsoft.jQuery.Unobtrusive.Ajax": {
+            "target": "Package",
+            "version": "[3.2.5, )"
           },
           "RotativaCore": {
             "target": "Package",

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "0e939c0db2ce89aa84c6c7f500c7db086acab9e3"
+    "signature": "e9bf695f32607b6824d1c87ea15274a4a35420ee"
   },
   "compilationOptions": {
     "defines": [
@@ -35,6 +35,7 @@
           "Microsoft.Extensions.Configuration.UserSecrets": "2.0.1",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.3",
+          "Microsoft.jQuery.Unobtrusive.Ajax": "3.2.5",
           "RotativaCore": "2.1.1",
           "WkWrap.Core": "1.0.2"
         },
@@ -88,6 +89,7 @@
           "lib/netstandard1.1/Imgur.API.dll": {}
         }
       },
+      "jQuery/1.8.0": {},
       "Libuv/1.10.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "2.0.0"
@@ -2357,6 +2359,11 @@
           "lib/netstandard1.4/Microsoft.IdentityModel.Tokens.dll": {}
         }
       },
+      "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+        "dependencies": {
+          "jQuery": "1.8.0"
+        }
+      },
       "Microsoft.Net.Http.Headers/2.0.2": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "2.0.0",
@@ -4492,6 +4499,13 @@
       "path": "imgur.api/4.0.1",
       "hashPath": "imgur.api.4.0.1.nupkg.sha512"
     },
+    "jQuery/1.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-laDFQRJrIRHT0Z0GVYklMt3bE0iu0MZFJwHwg21kt3SHb7Bj8TdNiM3K+ZdK1DzB8ZxKy8z7NkJvwMas+dmHBw==",
+      "path": "jquery/1.8.0",
+      "hashPath": "jquery.1.8.0.nupkg.sha512"
+    },
     "Libuv/1.10.0": {
       "type": "package",
       "serviceable": true,
@@ -5604,6 +5618,13 @@
       "sha512": "sha512-SsJbZVPvjSlKFDAQmR2wpL6ZD/vCFlIsf0jxRlBJwyzKXZy3Wi/Xo+fE2MzAerLsJgG1UCdtplRwqDyq1euayw==",
       "path": "microsoft.identitymodel.tokens/5.1.4",
       "hashPath": "microsoft.identitymodel.tokens.5.1.4.nupkg.sha512"
+    },
+    "Microsoft.jQuery.Unobtrusive.Ajax/3.2.5": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-NBjWsx9UwnDbyFzZHQSi79VAWLzFwB3kdmd2OMg7xvSemQoM1KK5Pu2AisyGucC22igqjlPQZiv2c82Agzlsuw==",
+      "path": "microsoft.jquery.unobtrusive.ajax/3.2.5",
+      "hashPath": "microsoft.jquery.unobtrusive.ajax.3.2.5.nupkg.sha512"
     },
     "Microsoft.Net.Http.Headers/2.0.2": {
       "type": "package",

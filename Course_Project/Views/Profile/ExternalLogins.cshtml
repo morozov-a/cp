@@ -1,5 +1,6 @@
 ﻿@model Course_Project.Models.ProfileViewModels.ExternalLoginsViewModel
 @using static Course_Project.Views.Profile.ManageNavPages
+
 @{
     ViewData["Title"] = "Manage your external logins";
     ViewData.AddActivePage(Course_Project.Views.Profile.ManageNavPages.ExternalLogins);
@@ -49,4 +50,8 @@
             </p>
         </div>
     </form>
+    <div id="bestbook">
+        @Ajax.ActionLink("Лучшая книга", "BestBook",
+                new AjaxOptions { UpdateTargetId = "bestbook" })
+    </div>
 }
