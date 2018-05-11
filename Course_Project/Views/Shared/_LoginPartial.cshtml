@@ -5,10 +5,11 @@
 @inject UserManager<ApplicationUser> UserManager
 @if (SignInManager.IsSignedIn(User))
 {
+    var user = await UserManager.GetUserAsync(User);
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <img src="https://i.imgur.com/KXoFgKw.png" class="img-circle" alt="UserLogo" height="50" width="50" />
+                <img src=@user.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
             </li>
             <li>
                 <a asp-area="" asp-controller="Profile" asp-action="Index"  method="get" title="Profile">@UserManager.GetUserName(User)</a>

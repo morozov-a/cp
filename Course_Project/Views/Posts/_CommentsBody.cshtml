@@ -6,42 +6,73 @@
     <div class="container" id="com">
         <h2>Comments</h2>
         @foreach (var comment in _context.Comments)
+    {
+        if (comment.PostId == Model.Id && Model.Comments.SingleOrDefault(m => m.Id == comment.Id) == null)
         {
-            if (comment.PostId.Trim() == Model.Id.Trim() && Model.Comments.SingleOrDefault(m => m.Id == comment.Id) == null)
-            {
-                Model.Comments.Add(comment);
-            }
+            Model.Comments.Add(comment);
         }
-        @if (Model.Comments.Count == 0)
-         {
+    }
+        @if (Model.Comments == null)
+    {
         <p>Be the first to post a comment</p>
-        }
-        else
-        {
-
-
+}
+else
+{
     @foreach (var comment in Model.Comments.OrderBy(a => a.CreatedDate))
-     {
-        var b = comment.Author.ProfilePicture;
-    <img src=@comment.Author.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
+    {
+        var author = await UserManager.FindByIdAsync(comment.AuthorId);
+
+    <div class="comments-container">
+
+
+        <ul id="comments-list" class="comments-list">
+
+            <li>
+                <div class="comment-main-level">
+
+                    <div class="comment-avatar"><img src=@author.ProfilePicture alt="UseLogo"></div>
+                    <!-- Contenedor del Comentario -->
+                    <div class="comment-box">
+                        <div class="comment-head">
+                            <h6 class="comment-name"><a href="">@Html.Raw(author)</a></h6>
+                            <span style="margin-right: 10px;">@Html.Raw(comment.CreatedDate)</span>
+                            <i class="fa fa-reply"></i>
+                            <i class="fa fa-heart"></i>
+                        </div>
+                        <div class="comment-content">
+                            @comment.Text
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @*<img src=@author.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
     <label>@comment.Text</label>
     @Html.Raw(comment.CreatedDate)
     <br />
-    
-    <strong> @Html.Raw(comment.Author.UserName)</strong>
+    <strong> @Html.Raw(author)</strong>
     <div>
-        <form asp-action="AddLike" asp-route-Id="@comment.Id" asp-route-postId="@Model.Id" data-ajax="true" data-ajax-method="POST" data-ajax-update="#com">
-            @Html.Raw(comment.Likes)
-            <button type="submit" class="btn btn-link">
-                <span class="glyphicon glyphicon-heart"></span>
-            </button>
-        </form>
+        @Html.Partial("_Like", comment)
     </div>
     <br />
-    <br />
-        
-     }
-            
+    <br />*@
+}
 }
     </div>
 </section>

@@ -21,6 +21,8 @@ namespace Course_Project.Data
 
         public DbSet<Tag> Tags { get; set; }
 
+        public DbSet<Like> Likes { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

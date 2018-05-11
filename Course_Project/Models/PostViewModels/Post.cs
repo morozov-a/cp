@@ -29,9 +29,11 @@ namespace Course_Project.Models.PostViewModels
 
         public string Comment { get; set; }
 
-        public List<Comment> Comments { get; set; } = new List<Comment>();
+        public ICollection<Comment> Comments { get; set; }
 
         public ApplicationUser Author { get; set; }
+
+        public string AuthorId { get; set; }
 
         public DateTime CreatedDate { get; set; }
 

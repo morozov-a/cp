@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Course_Project.Models.PostViewModels;
 using Microsoft.AspNetCore.Identity;
 
 namespace Course_Project.Models
@@ -14,6 +15,9 @@ namespace Course_Project.Models
         public string Theme { get; set; }
         public string Culture { get; set; }
         public string ProfilePicture { get; set; }
+        public List<Comment> Comments = new List<Comment>();
+        public List<Post> Posts =  new List<Post>();
+        public int Likes { get; set; }
 
 
     }

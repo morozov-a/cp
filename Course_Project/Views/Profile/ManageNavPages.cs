@@ -11,6 +11,7 @@ namespace Course_Project.Views.Profile
 {
     public static class ManageNavPages
     {
+        
         public static string Hidden {get;set;}
 
         public static string Disabled { get; set; }

@@ -3,7 +3,7 @@
     ViewData["Title"] = "Новости";
 }
 <div class="container">
-    <ul class="col-md-8 list-unstyled article-list">
+    <ul class="col-md-12 list-unstyled article-list">
         <li class="row">
             @await Component.InvokeAsync("LatestPosts", new { howMany = 15 })
         </li>

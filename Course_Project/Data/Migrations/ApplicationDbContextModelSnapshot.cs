@@ -27,8 +27,6 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<int>("AccessFailedCount");
 
-                    b.Property<string>("CommentId");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
 
@@ -42,6 +40,8 @@ namespace Course_Project.Data.Migrations
                     b.Property<string>("FirstName");
 
                     b.Property<string>("LastName");
+
+                    b.Property<int>("Likes");
 
                     b.Property<bool>("LockoutEnabled");
 
@@ -71,8 +71,6 @@ namespace Course_Project.Data.Migrations
                         .HasMaxLength(256);
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CommentId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasName("EmailIndex");
@@ -104,8 +102,6 @@ namespace Course_Project.Data.Migrations
 
                     b.Property<DateTime>("CreatedDate");
 
-                    b.Property<int>("Likes");
-
                     b.Property<string>("PostId");
 
                     b.Property<string>("Text")
@@ -130,6 +126,22 @@ namespace Course_Project.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Source");
+                });
+
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Like", b =>
+                {
+                    b.Property<string>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("CommentId");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CommentId");
+
+                    b.ToTable("Likes");
                 });
 
             modelBuilder.Entity("Course_Project.Models.PostViewModels.Post", b =>
@@ -290,22 +302,22 @@ namespace Course_Project.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("Course_Project.Models.ApplicationUser", b =>
-                {
-                    b.HasOne("Course_Project.Models.PostViewModels.Comment")
-                        .WithMany("Liked")
-                        .HasForeignKey("CommentId");
-                });
-
             modelBuilder.Entity("Course_Project.Models.PostViewModels.Comment", b =>
                 {
                     b.HasOne("Course_Project.Models.ApplicationUser", "Author")
                         .WithMany()
                         .HasForeignKey("AuthorId");
 
-                    b.HasOne("Course_Project.Models.PostViewModels.Post")
+                    b.HasOne("Course_Project.Models.PostViewModels.Post", "Post")
                         .WithMany("Comments")
                         .HasForeignKey("PostId");
+                });
+
+            modelBuilder.Entity("Course_Project.Models.PostViewModels.Like", b =>
+                {
+                    b.HasOne("Course_Project.Models.PostViewModels.Comment")
+                        .WithMany("Likes")
+                        .HasForeignKey("CommentId");
                 });
 
             modelBuilder.Entity("Course_Project.Models.PostViewModels.Post", b =>

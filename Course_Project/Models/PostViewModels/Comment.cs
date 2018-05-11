@@ -10,17 +10,21 @@ namespace Course_Project.Models.PostViewModels
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
-        public ApplicationUser Author { get; set; }
+        public  ApplicationUser Author { get; set; } = new ApplicationUser();
+
+        public string AuthorId { get; set; }
 
         public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
 
         public string PostId { get; set; }
 
-        public int Likes { get; set; } = 0;
+        public Post Post { get; set; } = new Post();
 
-        public List<ApplicationUser> Liked { get; set; } = new List<ApplicationUser>();
+        public List<Like> Likes { get; set; } = new List<Like>();
 
         [Required]
         public string Text { get; set; }
+
+
     }
 }

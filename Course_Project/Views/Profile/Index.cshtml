@@ -20,7 +20,7 @@
 </div>
 <div class="row">
     <div class="col-md-6">
-        <form method="post" >
+        <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Username"></label>
@@ -31,14 +31,14 @@
                 @if (Model.IsEmailConfirmed)
                 {
                     <div class="input-group">
-                            <input asp-for="Email" class="form-control" />
+                        <input asp-for="Email" class="form-control" />
                         <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
                     </div>
                 }
                 else
                 {
                     <input asp-for="Email" class="form-control" />
-                    <button asp-action="SendVerificationEmail" class="btn btn-link" >Send verification email</button>
+                    <button asp-action="SendVerificationEmail" class="btn btn-link">Send verification email</button>
                 }
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
@@ -58,31 +58,56 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <input asp-for="UserId" type="hidden" name="userId" />
-            <button id="button" type="submit" class="btn btn-default" >Save</button>
+            <button id="button" type="submit" class="btn btn-default">Save</button>
         </form>
     </div>
+</div>
+<div class="comments-container">
+
+
+    <ul id="comments-list" class="comments-list">
+       
+        <li>
+            <div class="comment-main-level">
+
+                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
+                <!-- Contenedor del Comentario -->
+                <div class="comment-box">
+                    <div class="comment-head">
+                        <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
+                        <span>hace 10 minutos</span>
+                        <i class="fa fa-reply"></i>
+                        <i class="fa fa-heart"></i>
+                    </div>
+                    <div class="comment-content">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
 </div>
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")
 }
-<script>Dropzone.autoDiscover = false;
-        var myDropzone = new Dropzone('#uploader', {
-            url: '/Profile/UploadImageAsync',
-            maxFilesize: 5,
-            maxFiles: 1,
-            uploadMultiple: false,
-            parallelUploads: 1,
-            acceptedFiles: "image/*",
-            autoProcessQueue: true,
-            init: function () {
-                var startUpload = document.getElementById("button");
-                myDropzone = this;
-                startUpload.addEventListener("click", function () {
-                    myDropzone.processQueue();
-                });
-                this.on("success", function () {
-                    myDropzone.options.autoProcessQueue = true;
-                });
-            }
-        });</script>
-
+<script>
+Dropzone.autoDiscover = false;
+    var myDropzone = new Dropzone('#uploader', {
+        url: '/Profile/UploadImageAsync',
+        maxFilesize: 5,
+        maxFiles: 1,
+        uploadMultiple: false,
+        parallelUploads: 1,
+        acceptedFiles: "image/*",
+        autoProcessQueue: true,
+        init: function () {
+            var startUpload = document.getElementById("button");
+            myDropzone = this;
+            startUpload.addEventListener("click", function () {
+                myDropzone.processQueue();
+            });
+            this.on("success", function () {
+                myDropzone.options.autoProcessQueue = true;
+            });
+        }
+    });</script>

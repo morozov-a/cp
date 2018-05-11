@@ -35,4 +35,3 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\be\Course_Project.resources.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\ru\Course_Project.resources.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.dll
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.pdb
-D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csprojResolveAssemblyReference.cache

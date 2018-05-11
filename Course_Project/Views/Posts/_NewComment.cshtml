@@ -1,0 +1,35 @@
+﻿@model Course_Project.Models.PostViewModels.Post
+@inject UserManager<ApplicationUser> UserManager
+
+@if (User.IsInRole("Admin") || User.IsInRole("Author"))
+{
+    var user = await UserManager.GetUserAsync(User);
+ 
+    <form asp-action="AddComment" asp-route-postid="@ViewContext.RouteData.Values["id"]" asp-antiforgery="false" data-ajax="true" data-ajax-method="POST" data-ajax-update="#com" data-ajax-complete="onComplete">
+        <div class="comments-container">
+            <ul id="comments-list" class="comments-list">
+                <li>
+                    <div class="comment-main-level">
+                        <div class="comment-avatar"><img src=@user.ProfilePicture alt="UseLogo"></div>
+                        <!-- Contenedor del Comentario -->
+                        <div class="comment-box">
+                            <div class="comment-head">
+                                <h6 class="comment-name"><a href="">@Html.Raw(user)</a></h6>
+                            </div>
+                            <div class="comment-content" style="height:140px">
+                                <textarea id="newComment" asp-for="Comment" class="form-control" maxlength="300" style="width:80%;height:100%; resize: none;" placeholder="Оставьте свой комментарий(до 300 символов)" required></textarea>
+                                <input type="submit" value="Отправить" class="btn btn-primary" style="position:relative;top:-37px;left:550px;width:15%" />
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </form>
+}
+
+<script>
+    var onComplete = function () {
+        $("#newComment").val('');
+    };
+</script>

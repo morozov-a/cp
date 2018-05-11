@@ -94,12 +94,11 @@ namespace Course_Project.Controllers
                 return NotFound();
             }
 
-            var post = await _context.Posts.Include(a => a.Author).SingleOrDefaultAsync(m => m.Id == id);
+            var post = await _context.Posts.Include(a => a.Author).Include(c => c.Comments).SingleOrDefaultAsync(m => m.Id == id);
             if (post == null)
             {
                 return NotFound();
             }
-
             return View(post);
         }
 
@@ -107,33 +106,49 @@ namespace Course_Project.Controllers
         public async Task<IActionResult> AddComment(string postId, Post post)
         {
             var user = await _userManager.GetUserAsync(User);
-            var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
-            _context.Comments.Add(new Comment()
-            {
-                Text = post.Comment,
-                CreatedDate = DateTime.UtcNow,
-                Author = user,
-                PostId = commentedPost.Id
-
-            });
-            _context.SaveChanges();
+            var commentedPost = await _context.Posts.Include(a => a.Author).Include(c => c.Comments).SingleOrDefaultAsync(m => m.Id == postId);
            
+                _context.Comments.Add(new Comment()
+                {
+                    Text = post.Comment,
+                    CreatedDate = DateTime.UtcNow,
+                    Author = user,
+                    PostId = commentedPost.Id,
+                    Post = commentedPost
+
+                });
+            _context.SaveChanges();
+            
             return PartialView("_CommentsBody", commentedPost);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddLike(string Id, string postId)
+        public async Task<IActionResult> AddLike(string Id)
         {
-            var commentedPost = await _context.Posts.SingleOrDefaultAsync(m => m.Id == postId);
-            var comment = _context.Comments.Include(a => a.Author).Include(a => a.Liked).SingleOrDefault(m => m.Id == Id);
-            foreach (var user in comment.Liked.Where(a => a.Id == _userManager.GetUserId(User)))
+           
+            var comment = _context.Comments.Where(a=>a.Id==Id).Include(a => a.Author).SingleOrDefault();
+            var user = await _userManager.GetUserAsync(User);
+            var isLiked = _context.Likes.Where(n => n.CommentId == comment.Id && n.UserId == user.Id).SingleOrDefault();
+            if (isLiked == null)
             {
-                return PartialView("_CommentsBody", commentedPost);
+                comment.Author.Likes += 1;
+                _context.Likes.Add(new Like()
+                {
+                    UserId = user.Id,
+                    CommentId = comment.Id
+
+                });
             }
-            comment.Likes += 1;
-            comment.Liked.Add(await _userManager.GetUserAsync(User));
+            else
+            {
+                comment.Author.Likes -= 1;
+                _context.Likes.Remove(isLiked);
+            }
+            
             _context.SaveChanges();
-            return PartialView("_CommentsBody", commentedPost);
+
+
+            return PartialView("_Like", comment);
         }
 
         public async Task<IActionResult> UploadImageAsync(IList<IFormFile> files)
