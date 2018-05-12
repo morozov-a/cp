@@ -38,5 +38,9 @@ namespace Course_Project.Models.PostViewModels
         public DateTime CreatedDate { get; set; }
 
         public DateTime LastModified { get; set; }
+
+        public int CountOfVoters { get; set; }
+
+        public float Raiting { get; set; }
     }
 }

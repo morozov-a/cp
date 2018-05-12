@@ -270,5 +270,41 @@ namespace Course_Project.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction("Index");
         }
+
+        [HttpPost]
+        public async Task<IActionResult> SetRaiting(string value, Post post)
+        {
+            int currentValue = Convert.ToInt16(value, 16);
+            var ratedPost = _context.Posts.Where(a => a.Id == post.Id).SingleOrDefault();
+            var countOfVoters = ratedPost.CountOfVoters;
+            var raiting = ratedPost.Raiting;
+            var summaryRaits = countOfVoters * raiting;
+            var user = await _userManager.GetUserAsync(User);
+            var isRated = _context.Raitings.Where(n => n.Id == ratedPost.Id && n.UserId == user.Id).SingleOrDefault();
+            if (isRated == null)
+            {
+
+                Raiting newRaiting = new Raiting() { UserId = user.Id, ParentPost = ratedPost, PostId = ratedPost.Id, Value= currentValue };
+                _context.Raitings.Add(newRaiting);
+                ratedPost.Raiting = (summaryRaits+currentValue)/(countOfVoters+1);
+                ratedPost.CountOfVoters += 1;
+                
+
+            }
+            else
+            {
+
+                isRated.Value = currentValue;
+                ratedPost.Raiting = (summaryRaits + currentValue) / countOfVoters;
+                
+
+
+            }
+
+            _context.SaveChanges();
+
+
+            return PartialView("_Raiting", ratedPost);
+        }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model Course_Project.Models.PostViewModels.Post
+@{ 
+    var postId = Model.Id;
+    var idForm = "#" + Model.Id;
+}
+<div class="stars">
+    <form id=@Model.Id asp-action="SetRaiting"  data-ajax-method="POST" data-ajax-update="@idForm">
+        <p style="float: left;padding:4px;position:relative;top:3px">Оцените статью:</p>
+        <p style="float: right;position:relative;top:8px">Рейтинг статьи: @Model.Raiting (Проголосовало @Model.CountOfVoters человек.)</p>
+        @for (int i = 5; i >0; i--)
+        {
+            string id = Model.Id + i;
+            string classStars = "star star-" + i;
+        <input class="@classStars" id=@id type="radio" name=@Model.Id value=@i />
+        <label class="@classStars" for=@id></label>
+    }
+        <input type="submit" />
+    </form>
+</div>
+

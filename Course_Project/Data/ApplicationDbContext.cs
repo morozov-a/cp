@@ -23,6 +23,8 @@ namespace Course_Project.Data
 
         public DbSet<Like> Likes { get; set; }
 
+        public DbSet<Raiting> Raitings { get; set; }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

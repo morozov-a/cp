@@ -8,12 +8,13 @@ using Microsoft.EntityFrameworkCore.Storage;
 using Microsoft.EntityFrameworkCore.Storage.Internal;
 using System;
 
-namespace Course_Project.Data.Migrations
+namespace Course_Project.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180512080751_raiting")]
+    partial class raiting
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -192,8 +193,6 @@ namespace Course_Project.Data.Migrations
                     b.Property<string>("PostId");
 
                     b.Property<string>("UserId");
-
-                    b.Property<int>("Value");
 
                     b.HasKey("Id");
 
