@@ -20,7 +20,7 @@ namespace Course_Project.Models.PostViewModels
 
         public Post Post { get; set; } = new Post();
 
-        public List<Like> Likes { get; set; } = new List<Like>();
+        public int Likes { get; set; } 
 
         [Required]
         public string Text { get; set; }

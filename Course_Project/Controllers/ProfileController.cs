@@ -77,7 +77,8 @@ namespace Course_Project.Controllers
                 Lastname = user.LastName,
                 PhoneNumber = user.PhoneNumber,
                 IsEmailConfirmed = user.EmailConfirmed,
-                StatusMessage = StatusMessage
+                StatusMessage = StatusMessage,
+                ProfilePicture = user.ProfilePicture
 
             };
             

@@ -27,44 +27,7 @@
 	position: relative;
 }
 
-/**
- * Lineas / Detalles
- -----------------------*/
-/* .comments-list:before {
-	content: '';
-	width: 2px;
-	height: 100%;
-	background: #c7cacb;
-	position: absolute;
-	left: 32px;
-	top: 0;
-}
 
-.comments-list:after {
-	content: '';
-	position: absolute;
-	background: #c7cacb;
-	bottom: 0;
-	left: 27px;
-	width: 7px;
-	height: 7px;
-	border: 3px solid #dee1e3;
-	-webkit-border-radius: 50%;
-	-moz-border-radius: 50%;
-	border-radius: 50%;
-}
-
-.reply-list:before, .reply-list:after {display: none;}
-.reply-list li:before {
-	content: '';
-	width: 60px;
-	height: 2px;
-	background: #c7cacb;
-	position: absolute;
-	top: 25px;
-	left: -55px;
-}
- */
 
 .comments-list li {
 	margin-bottom: 15px;
@@ -177,6 +140,7 @@
 	transition: color 0.3s ease;
 }
 
+
 .comment-box .comment-head i:hover {
 	color: #03658c;
 }
@@ -273,3 +237,22 @@
 	width: 100%; /* Ширина слоя */
 	height: 50px; /* Высота слоя */
    }
+
+   .ghost-button {
+  background-color: #fff;
+  width: 1px;
+  height:1px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  float: right;
+  margin-left: 25px;
+  position: relative;
+  cursor: default;
+}
+.ghost-button:hover,
+.ghost-button:active {
+  background-color: #fff;
+  color: #000;
+}

@@ -107,14 +107,16 @@ namespace Course_Project.Controllers
         {
             var user = await _userManager.GetUserAsync(User);
             var commentedPost = await _context.Posts.Include(a => a.Author).Include(c => c.Comments).SingleOrDefaultAsync(m => m.Id == postId);
-           
-                _context.Comments.Add(new Comment()
-                {
-                    Text = post.Comment,
-                    CreatedDate = DateTime.UtcNow,
-                    Author = user,
-                    PostId = commentedPost.Id,
-                    Post = commentedPost
+
+            _context.Comments.Add(new Comment()
+            {
+                Text = post.Comment,
+                CreatedDate = DateTime.UtcNow,
+                Author = user,
+                PostId = commentedPost.Id,
+                Post = commentedPost,
+                Likes = 0
+                
 
                 });
             _context.SaveChanges();
@@ -125,31 +127,36 @@ namespace Course_Project.Controllers
         [HttpPost]
         public async Task<IActionResult> AddLike(string Id)
         {
-           
-            var comment = _context.Comments.Where(a=>a.Id==Id).Include(a => a.Author).SingleOrDefault();
+
+            var comment = _context.Comments.Where(a => a.Id == Id).Include(a => a.Author).SingleOrDefault();
             var user = await _userManager.GetUserAsync(User);
             var isLiked = _context.Likes.Where(n => n.CommentId == comment.Id && n.UserId == user.Id).SingleOrDefault();
             if (isLiked == null)
             {
-                comment.Author.Likes += 1;
-                _context.Likes.Add(new Like()
-                {
-                    UserId = user.Id,
-                    CommentId = comment.Id
 
-                });
+                Like newLike = new Like() { UserId = user.Id, ParentComment = comment, CommentId = comment.Id };
+                _context.Likes.Add(newLike);
+                comment.Author.Likes += 1;
+                comment.Likes += 1;
+
             }
             else
             {
-                comment.Author.Likes -= 1;
+
                 _context.Likes.Remove(isLiked);
+                comment.Author.Likes -= 1;
+                comment.Likes -= 1;
+
+
             }
-            
+
             _context.SaveChanges();
 
 
             return PartialView("_Like", comment);
         }
+
+
 
         public async Task<IActionResult> UploadImageAsync(IList<IFormFile> files)
         {

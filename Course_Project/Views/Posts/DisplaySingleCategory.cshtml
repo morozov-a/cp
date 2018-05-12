@@ -5,7 +5,7 @@
     ViewData["Title"] = Context.Request.Query["category"];
 }
 <div class="container">
-    <ul class="col-md-8 list-unstyled article-list">
+    <ul class="col-md-12 list-unstyled article-list">
         <li class="row">
             @await Component.InvokeAsync("CategoryPosts", new { category = Context.Request.Query["category"].ToString(), howMany = 10 })
         </li>

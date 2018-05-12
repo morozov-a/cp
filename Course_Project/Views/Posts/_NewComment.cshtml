@@ -4,9 +4,9 @@
 @if (User.IsInRole("Admin") || User.IsInRole("Author"))
 {
     var user = await UserManager.GetUserAsync(User);
- 
+    <hr />
     <form asp-action="AddComment" asp-route-postid="@ViewContext.RouteData.Values["id"]" asp-antiforgery="false" data-ajax="true" data-ajax-method="POST" data-ajax-update="#com" data-ajax-complete="onComplete">
-        <div class="comments-container">
+        <div class="comments-container" style="position:relative;left:30px">
             <ul id="comments-list" class="comments-list">
                 <li>
                     <div class="comment-main-level">

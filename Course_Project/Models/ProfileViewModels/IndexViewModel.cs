@@ -30,5 +30,6 @@ namespace Course_Project.Models.ProfileViewModels
 
         public string StatusMessage { get; set; }
         public string UserId { get; set; }
+        public string ProfilePicture { get; set; }
     }
 }

@@ -13,7 +13,7 @@
     <div id="dropzone">
         <form action="/Image/UploadImageAsync" class="dropzone needsclick dz-clickable" id="uploader">
             <div class="dz-message needsclick">
-                ДРАГ ЭНД ДРОП<br>
+                <img src=@Model.ProfilePicture  alt="UserLogo" height="200" width="150" />
             </div>
         </form>
     </div>
@@ -61,31 +61,6 @@
             <button id="button" type="submit" class="btn btn-default">Save</button>
         </form>
     </div>
-</div>
-<div class="comments-container">
-
-
-    <ul id="comments-list" class="comments-list">
-       
-        <li>
-            <div class="comment-main-level">
-
-                <div class="comment-avatar"><img src="http://i9.photobucket.com/albums/a88/creaticode/avatar_2_zps7de12f8b.jpg" alt=""></div>
-                <!-- Contenedor del Comentario -->
-                <div class="comment-box">
-                    <div class="comment-head">
-                        <h6 class="comment-name"><a href="http://creaticode.com/blog">Lorena Rojero</a></h6>
-                        <span>hace 10 minutos</span>
-                        <i class="fa fa-reply"></i>
-                        <i class="fa fa-heart"></i>
-                    </div>
-                    <div class="comment-content">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit omnis animi et iure laudantium vitae, praesentium optio, sapiente distinctio illo?
-                    </div>
-                </div>
-            </div>
-        </li>
-    </ul>
 </div>
 @section Scripts {
     @await Html.PartialAsync("_ValidationScriptsPartial")

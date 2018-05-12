@@ -9,6 +9,8 @@ namespace Course_Project.Models.PostViewModels
     {
         public string Id { get; set; } = Guid.NewGuid().ToString();
 
+        public Comment ParentComment { get; set; }
+
         public string CommentId { get; set; } 
 
         public string UserId { get; set; }
