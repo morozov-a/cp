@@ -22,6 +22,7 @@ using Brik.Security.VkontakteMiddleware;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
+using Course_Project.Hubs;
 
 namespace Course_Project
 {
@@ -37,7 +38,9 @@ namespace Course_Project
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddSignalR();
             services.AddLocalization(options => options.ResourcesPath = "Resources");
+            
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
@@ -102,6 +105,10 @@ namespace Course_Project
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            //app.UseSignalR(routes =>
+            //{
+            //    routes.MapHub<CommentsHub>("/Profile");
+            //});
 
             loggerFactory.AddFile(Path.Combine(Directory.GetCurrentDirectory(), "logger.txt"));
             var logger = loggerFactory.CreateLogger("FileLogger");

@@ -1,6 +1,8 @@
 ﻿@model IEnumerable<Course_Project.Models.PostViewModels.Post>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
 @{
-    ViewData["Title"] = "Новости";
+    ViewData["Title"] = @Localizer["News"];
 }
 <div class="container">
     <ul class="col-md-12 list-unstyled article-list">
@@ -9,4 +11,3 @@
         </li>
     </ul>
 </div>
-

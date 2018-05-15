@@ -3,13 +3,13 @@
 @using Course_Project.Models
 @{
 
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = Localizer["Profile"];
     ViewData.AddActivePage(Course_Project.Views.Profile.ManageNavPages.Index);
 }
 <h4></h4>
 @Html.Partial("_StatusMessage", Model.StatusMessage)
 <div class="form-group">
-    <label class="control-label">Изменить фото</label>
+    <label class="control-label">@Localizer["Change avatar"]</label>
     <div id="dropzone">
         <form action="/Image/UploadImageAsync" class="dropzone needsclick dz-clickable" id="uploader">
             <div class="dz-message needsclick">
@@ -38,7 +38,7 @@
                 else
                 {
                     <input asp-for="Email" class="form-control" />
-                    <button asp-action="SendVerificationEmail" class="btn btn-link">Send verification email</button>
+                    <button asp-action="SendVerificationEmail" class="btn btn-link">@Localizer["Send verification email"]</button>
                 }
                 <span asp-validation-for="Email" class="text-danger"></span>
             </div>
@@ -58,7 +58,7 @@
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
             <input asp-for="UserId" type="hidden" name="userId" />
-            <button id="button" type="submit" class="btn btn-default">Save</button>
+            <button id="button" type="submit" class="btn btn-default">@Localizer["Save"]</button>
         </form>
     </div>
 </div>
@@ -85,4 +85,5 @@ Dropzone.autoDiscover = false;
                 myDropzone.options.autoProcessQueue = true;
             });
         }
-    });</script>
+    });
+</script>

@@ -27,9 +27,21 @@
         </div>
     </form>
 }
-
+    <script src="~/js/signalr.min.js"></script>
 <script>
     var onComplete = function () {
         $("#newComment").val('');
+        //hubConnection.invoke("Update");
     };
+
+    //let hubUrl = 'https://localhost:44343/Profile';
+    //const hubConnection = new signalR.HubConnection(hubUrl);
+    //hubConnection.on("Update", function () {
+
+        
+    //    //$("#com").load("_CommentsBody.cshtml #com");
+    //    $("#com").load("#com");
+
+    //});
+    //hubConnection.start();
 </script>

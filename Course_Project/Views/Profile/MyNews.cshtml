@@ -1,14 +1,14 @@
 ﻿
 @using static Course_Project.Views.Profile.ManageNavPages
 @{
-    ViewData["Title"] = "Manage your external logins";
+    ViewData["Title"] = Localizer["My news"];
     ViewData.AddActivePage(Course_Project.Views.Profile.ManageNavPages.MyNews);
 }
 
 @using Course_Project.Data
 @model ApplicationDbContext
 @inject UserManager<ApplicationUser> UserManager
-<h2>My content</h2>
+<h2>@Localizer["My news"]</h2>
 <table class="table">
     @foreach (var post in Model.Posts)
     {
@@ -23,8 +23,8 @@
                    
                 </td>
                 <td>
-                    <a class="btn btn-sm btn-primary" asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id">Edit</a>
-                    <a class="btn btn-danger" asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id">Delete</a>
+                    <a class="btn btn-sm btn-primary" asp-controller="Posts" asp-action="Edit" asp-route-id="@post.Id">@Localizer["Edit"]</a>
+                    <a class="btn btn-danger" asp-controller="Posts" asp-action="Delete" asp-route-id="@post.Id">@Localizer["Delete"]</a>
                 </td>
             </tr>
 

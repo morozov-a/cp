@@ -1,4 +1,5 @@
 ﻿using Course_Project.Data;
+using Course_Project.Hubs;
 using Course_Project.Models;
 using Course_Project.Models.PostViewModels;
 using Course_Project.Services;
@@ -120,9 +121,12 @@ namespace Course_Project.Controllers
 
                 });
             _context.SaveChanges();
-            
             return PartialView("_CommentsBody", commentedPost);
+
+            
         }
+
+       
 
         [HttpPost]
         public async Task<IActionResult> AddLike(string Id)
