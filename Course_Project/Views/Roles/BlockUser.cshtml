@@ -1,11 +1,11 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @model Course_Project.Models.ChangeRoleViewModel
-<h2>Блокировка пользователя @Model.UserName</h2>
+<h2>@Localizer["Lock user"] @Model.UserName</h2>
 <form asp-action="BlockUser" method="post">
     <input type="hidden" name="userId" value="@Model.UserId" />
     <div class="form-group">
-        <label for="timeOfBlock">Заблокировать на</label>
-        <input name="timeOfBlock" class="form-control" /><label>минут.</label>
+        <label for="timeOfBlock">@Localizer["Block on"]</label>
+        <input name="timeOfBlock" class="form-control" /><label>@Localizer["minutes."]</label>
     </div>
-    <button type="submit" class="btn btn-primary">Блокировать</button>
+    <button type="submit" class="btn btn-primary">@Localizer["Block"]</button>
 </form>

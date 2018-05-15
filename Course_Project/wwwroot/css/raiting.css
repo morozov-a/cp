@@ -1,5 +1,5 @@
 div.stars {
-  width: 550px;
+  width: 1000px;
   display: inline-block;
   
 }
@@ -7,7 +7,7 @@ div.stars {
 input.star { display: none; }
 
 label.star {
-  float: right;
+  float: left;
   padding: 4px;
   font-size: 18px;
   color: #444;

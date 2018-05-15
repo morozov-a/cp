@@ -14,8 +14,8 @@
 }
 <div class="stars" id=@idDiv>
     <form id=@idForm asp-action="SetRaiting"  asp-route-postId=@Model.Id data-ajax="true" data-ajax-method="POST" data-ajax-update="@idDivUpdate">
-        <p style="float: left;padding:4px;position:relative;top:3px">Оцените статью:</p>
-        <p style="float: right;position:relative;top:8px;left:20px">Рейтинг статьи: @Model.Raiting (Проголосовало @Model.CountOfVoters человек.)</p>
+        <p style="float: left;padding:4px;position:relative;top:3px">@Localizer["Rate this post:"]</p>
+        <p style="float: right;position:relative;top:8px;left:20px">@Localizer["Post rating:"] @Model.Raiting (@Localizer["Voted on"] @Model.CountOfVoters @Localizer["people."])</p>
 
         @for (int i = 5; i > 0; i--)
         {

@@ -4,7 +4,7 @@
 @inject ApplicationDbContext _context
 <section id="comments">
     <div class="container" id="com">
-        <h2>Комментарии:</h2>
+        <h2>@Localizer["Comments:"]</h2>
         @foreach (var comment in _context.Comments)
     {
         if (comment.PostId == Model.Id && Model.Comments.SingleOrDefault(m => m.Id == comment.Id) == null)
@@ -14,7 +14,7 @@
     }
         @if (Model.Comments.Count == 0)
     {
-        <p>К данной новости пока нет комментариев</p>
+        <p>@Localizer["There are no comments for this news"]</p>
 }
 else
 {

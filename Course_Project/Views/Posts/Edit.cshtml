@@ -2,9 +2,9 @@
 @using Course_Project.Data
 @inject ApplicationDbContext contetxt
 @{
-    ViewData["Title"] = "Add chapter";
+    ViewData["Title"] = Localizer["Edit post"];
 }
-<h4>Edit</h4>
+<h4>@Localizer["Edit post"]</h4>
 <hr />
 <div style="margin-left:200px">
     <label class="control-label ">"NewPhoto"</label>
@@ -70,11 +70,11 @@
             </div>
         
        
-        <input type="submit" value="Edit" class="btn btn-default" />
+        <input type="submit" value=@Localizer["Edit post"] class="btn btn-default" />
     </div>
 </form>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index">@Localizer["Back to List"]</a>
 </div>
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
