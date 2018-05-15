@@ -10,28 +10,31 @@
     var idDivUpdate = "#" + idDiv;
     var user = await UserManager.GetUserAsync(User);
     var isRated = _context.Raitings.Where(n => n.PostId == Model.Id && n.UserId == user.Id).SingleOrDefault();
+    var raiting = string.Format("{0:N2}", Model.Raiting);
 
 }
 <div class="stars" id=@idDiv>
-    <form id=@idForm asp-action="SetRaiting"  asp-route-postId=@Model.Id data-ajax="true" data-ajax-method="POST" data-ajax-update="@idDivUpdate">
+    <form id=@idForm asp-action="SetRaiting" asp-route-postId=@Model.Id data-ajax="true" data-ajax-method="POST" data-ajax-update="@idDivUpdate">
         <p style="float: left;padding:4px;position:relative;top:3px">@Localizer["Rate this post:"]</p>
-        <p style="float: right;position:relative;top:8px;left:20px">@Localizer["Post rating:"] @Model.Raiting (@Localizer["Voted on"] @Model.CountOfVoters @Localizer["people."])</p>
+
 
         @for (int i = 5; i > 0; i--)
+    {
+        string id = Model.Id + i;
+        string classStars = "star star-" + i;
+        if (isRated != null && i == isRated.Value)
         {
-            string id = Model.Id + i;
-            string classStars = "star star-" + i;
-            if (isRated != null && i == isRated.Value)
-            {
-                <input class="@classStars" id=@id type="radio" name="currentValue" value=@i onclick="onClick(name,id)" checked/>
-                <label class="@classStars" for=@id></label>
-            }
-            else
-            {
-                <input class="@classStars" id=@id type="radio" name="currentValue" value=@i onclick="onClick(name,id)" />
-                <label class="@classStars" for=@id></label>
-            }
-        }
+            <input class="@classStars" id=@id type="radio" name="currentValue" value=@i onclick="onClick(name,id)" checked />
+            <label class="@classStars" for=@id></label>
+    }
+    else
+    {
+        <input class="@classStars" id=@id type="radio" name="currentValue" value=@i onclick="onClick(name,id)" />
+        <label class="@classStars" for=@id></label>
+}
+}
+        
+        <div style="width: 340px;float:left;position:relative;left:-20px"><p style="float: right;position:relative;top:8px;left:20px">@Localizer["Post rating:"] @raiting (@Localizer["Voted on"] @Model.CountOfVoters @Localizer["people."])</p></div>
     </form>
 
 </div>
