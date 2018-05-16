@@ -29,8 +29,8 @@ else
                         <img src=@author.ProfilePicture alt="UseLogo">
                     </div>
                     <div class="comment-box">
-                        <div class="comment-head">
-                            <h6 class="comment-name"><a href="">@Html.Raw(author)</a></h6>
+                        <div id="commentHead" class="comment-head">
+                            <h6 class="comment-name"><a href="">@Html.Raw(author)</a>   <i class="fa fa-heart"  style="color:dodgerblue">  @Html.Raw(author.Likes)</i></h6>
                             <span style="margin-right: 10px;">@Html.Raw(comment.CreatedDate)</span>
 
                      

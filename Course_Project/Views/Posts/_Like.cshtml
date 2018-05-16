@@ -4,10 +4,9 @@
 @inject ApplicationDbContext _context
 @{
     var user = await UserManager.GetUserAsync(User);
-    var idForm = "#" + Model.Id;
     var isLiked = _context.Likes.Where(n => n.CommentId == Model.Id && n.UserId == user.Id).SingleOrDefault();
  }
-<form id="@Model.Id" asp-action="AddLike" asp-route-Id="@Model.Id" data-ajax="true" data-ajax-method="POST" data-ajax-update="@idForm">
+<form id="@Model.Id" asp-action="AddLike" asp-route-Id="@Model.Id" data-ajax="true" data-ajax-method="POST" data-ajax-success="onSuccessLike">
     <i class="fa fa-reply"></i>
 
 

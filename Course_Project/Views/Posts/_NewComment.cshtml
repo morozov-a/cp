@@ -5,7 +5,7 @@
 {
     var user = await UserManager.GetUserAsync(User);
     <hr />
-    <form asp-action="AddComment" asp-route-postid="@ViewContext.RouteData.Values["id"]" asp-antiforgery="false" data-ajax="true" data-ajax-method="POST" data-ajax-update="#com" data-ajax-complete="onComplete">
+    <form asp-action="AddComment" asp-route-postid="@ViewContext.RouteData.Values["id"]" asp-antiforgery="false" data-ajax="true" data-ajax-method="POST"  data-ajax-success="onSuccessNewComment">
         <div class="comments-container" style="position:relative;left:30px">
             <ul id="comments-list" class="comments-list">
                 <li>
@@ -29,8 +29,15 @@
 }
     <script src="~/js/signalr.min.js"></script>
 <script>
-    var onComplete = function () {
+    var onSuccessNewComment = function () {
         $("#newComment").val('');
+        $('#comments').load(document.URL + " #comments");
+        //hubConnection.invoke("Update");
+    };
+    var onSuccessLike = function () {
+        
+        $('#comments').load(document.URL + " #comments");
+        $('#authorLikes').load(document.URL + " #authorLikes");
         //hubConnection.invoke("Update");
     };
 

@@ -5,7 +5,9 @@
     <div class="col-md-2">
         <p class="text-center">
             <img src=@Model.Author.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
-            <strong>  @Html.Raw(Model.Author.UserName)</strong>
+            <strong> <a href="">@Html.Raw(Model.Author)</a></strong>
+            <div id="authorLikes"><i  class="fa fa-heart" style="color:dodgerblue">  @Html.Raw(Model.Author.Likes)</i></div>
+            
             @Model.CreatedDate.ToString("dd MMM yyyy")
         </p>
     </div>

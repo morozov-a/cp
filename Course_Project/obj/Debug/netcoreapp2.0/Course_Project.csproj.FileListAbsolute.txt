@@ -105,4 +105,3 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Role
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.Index.ru.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.UserList.be.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.UserList.ru.resources
-D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csprojResolveAssemblyReference.cache
