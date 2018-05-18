@@ -7,6 +7,12 @@
     var user = await UserManager.GetUserAsync(User);
     <form asp-area="" asp-controller="Account" asp-action="Logout" method="post" id="logoutForm" class="navbar-right">
         <ul class="nav navbar-nav navbar-right">
+            @if (await UserManager.IsInRoleAsync(user, "Admin"))
+            {
+                <li>
+                    <a asp-controller="Admin" asp-action="UserList" method="get">@Localizer["Admin panel"]</a>
+                </li>
+            }
             <li>
                 <img src=@user.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
             </li>
