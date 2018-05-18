@@ -59,16 +59,20 @@ namespace Course_Project.Controllers
 
 
         [HttpGet]
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string id)
         {
-           
-            var user = await _userManager.GetUserAsync(User);
-            
+            if (id == null)
+            {
+                return NotFound();
+            }
+            //var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(id);
+
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
             }
-           
+
             var model = new IndexViewModel
             {
                 UserId = user.Id,
@@ -82,7 +86,7 @@ namespace Course_Project.Controllers
                 ProfilePicture = user.ProfilePicture
 
             };
-            
+            ManageNavPages.UserId = user.Id;
             return View(model);
         }
 
@@ -162,11 +166,11 @@ namespace Course_Project.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> ChangePassword()
+        public async Task<IActionResult> ChangePassword(string id)
         {
-           
-            var user = await _userManager.GetUserAsync(User);
-           
+
+            ApplicationUser user = await _userManager.FindByIdAsync(id);
+
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -178,7 +182,8 @@ namespace Course_Project.Controllers
                 return RedirectToAction(nameof(SetPassword));
             }
 
-            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage};
+            var model = new ChangePasswordViewModel { StatusMessage = StatusMessage,UserId=user.Id};
+            ManageNavPages.UserId = user.Id;
             return View(model);
         }
 
@@ -191,7 +196,7 @@ namespace Course_Project.Controllers
                 return View(model);
             }
 
-            var user = await _userManager.GetUserAsync(User);
+            ApplicationUser user = await _userManager.FindByIdAsync(model.UserId);
             if (user == null)
             {
                 throw new ApplicationException($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
@@ -301,14 +306,16 @@ namespace Course_Project.Controllers
         }
 
         [HttpPost]
-        public IActionResult SetLanguage(string culture, string returnUrl)
+        public async Task<IActionResult> SetLanguage(string culture, string returnUrl)
         {
+            var user = await _userManager.GetUserAsync(User);
             Response.Cookies.Append(
                 CookieRequestCultureProvider.DefaultCookieName,
                 CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
                 new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
             );
-
+            user.Culture = culture;
+            await _userManager.UpdateAsync(user);
             return LocalRedirect(returnUrl);
         }
 

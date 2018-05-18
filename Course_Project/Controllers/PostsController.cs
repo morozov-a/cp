@@ -42,6 +42,7 @@ namespace Course_Project.Controllers
         public async Task<IActionResult> Index()
         {
             var applicationDbContext = _context.Posts.Include(a => a.Author);
+           
             return View(await applicationDbContext.ToListAsync());
         }
 

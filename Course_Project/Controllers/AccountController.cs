@@ -14,6 +14,8 @@ using Course_Project.Models;
 using Course_Project.Models.AccountViewModels;
 using Course_Project.Services;
 using Course_Project.Data;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Http;
 
 namespace Course_Project.Controllers
 {
@@ -50,7 +52,7 @@ namespace Course_Project.Controllers
         {
             // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-
+            
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -78,6 +80,8 @@ namespace Course_Project.Controllers
                                                     model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
+
+                    Response.Cookies.Append(".AspNetCore.Culture", $"c={user.Culture}|uic={user.Culture}");
                     return RedirectToLocal(returnUrl);
                 }
                 else
@@ -177,7 +181,10 @@ namespace Course_Project.Controllers
             var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
             if (result.Succeeded)
             {
+                var user = await _userManager.FindByLoginAsync(info.LoginProvider,info.ProviderKey);
+                Response.Cookies.Append(".AspNetCore.Culture", $"c={user.Culture}|uic={user.Culture}");
                 _logger.LogInformation("User logged in with {Name} provider.", info.LoginProvider);
+              
                 return RedirectToLocal(returnUrl);
             }
             if (result.IsLockedOut)
@@ -353,8 +360,12 @@ namespace Course_Project.Controllers
 
         private IActionResult RedirectToLocal(string returnUrl)
         {
+            
+            
+
             if (Url.IsLocalUrl(returnUrl))
             {
+           
                 return Redirect(returnUrl);
             }
             else

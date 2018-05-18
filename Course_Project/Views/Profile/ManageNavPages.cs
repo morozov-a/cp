@@ -16,9 +16,9 @@ namespace Course_Project.Views.Profile
 
         public static string Disabled { get; set; }
 
-        public static string userId { get; set; }
+        public static string UserId { get; set; }
 
-        public static string currentUserId { get; set; }
+        public static string CurrentUserId { get; set; }
 
         public static string ActivePageKey => "ActivePage";
 

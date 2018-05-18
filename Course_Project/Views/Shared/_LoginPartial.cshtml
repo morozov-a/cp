@@ -1,6 +1,5 @@
 @using Microsoft.AspNetCore.Identity
 @using Course_Project.Models
-
 @inject SignInManager<ApplicationUser> SignInManager
 @inject UserManager<ApplicationUser> UserManager
 @if (SignInManager.IsSignedIn(User))
@@ -12,7 +11,7 @@
                 <img src=@user.ProfilePicture class="img-circle" alt="UserLogo" height="50" width="50" />
             </li>
             <li>
-                <a asp-area="" asp-controller="Profile" asp-action="Index"  method="get" title="Profile">@UserManager.GetUserName(User)</a>
+                <a asp-area="" asp-controller="Profile" asp-action="Index" asp-route-id="@user.Id" method="get" title="Profile">@user</a>
             </li>
             <li>
                 <button id="logOut" type="submit" class="btn btn-link navbar-btn navbar-link">@Localizer["Log out"]</button>
@@ -27,3 +26,4 @@ else
         <li><a asp-area="" asp-controller="Account" asp-action="Login">@Localizer["Log in"]</a></li>
     </ul>
 }
+
