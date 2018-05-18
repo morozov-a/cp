@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Hosting;
@@ -18,11 +14,11 @@ using System.IO;
 using System.Globalization;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
-using Brik.Security.VkontakteMiddleware;
 using Microsoft.AspNetCore.Authentication.OAuth;
 using Microsoft.AspNetCore.Authentication;
 using System.Security.Claims;
 using Course_Project.Hubs;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Course_Project
 {
@@ -55,6 +51,16 @@ namespace Course_Project
 
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
+            services.AddAuthentication(options =>
+            {
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            })
+
+            .AddCookie(options =>
+            {
+                options.LoginPath = "/Login";
+                options.LogoutPath = "/signout";
+            });
             services.AddAuthentication().AddTwitter(twitterOptions =>
             {
                 twitterOptions.ConsumerKey = Configuration["Authentication:Twitter:ConsumerKey"];
@@ -65,7 +71,7 @@ namespace Course_Project
                 facebookOptions.AppId = Configuration["Authentication:Facebook:AppId"];
                 facebookOptions.AppSecret = Configuration["Authentication:Facebook:AppSecret"];
             })
-            .AddOAuth("VKontakte", vk =>
+            .AddVkontakte("VKontakte", vk =>
                 {
                     vk.ClientId = Configuration["Authentication:VKontakte:AppId"];
                     vk.ClientSecret = Configuration["Authentication:VKontakte:AppSecret"];

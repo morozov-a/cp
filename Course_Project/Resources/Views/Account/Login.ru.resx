@@ -123,13 +123,22 @@
   <data name="Log in" xml:space="preserve">
     <value>Авторизоваться</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
   <data name="Register as a new user" xml:space="preserve">
     <value>Зарегистрируйтесь как новый пользователь</value>
+  </data>
+  <data name="Remember me?" xml:space="preserve">
+    <value>Запомнить меня?</value>
   </data>
   <data name="Use a local account to log in." xml:space="preserve">
     <value>Используйте локальную учетную запись для входа в систему.</value>
   </data>
   <data name="Use another service to log in." xml:space="preserve">
-    <value>Используйте социальные сети для входа.</value>
+    <value>Или используйте социальные сети для входа.</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Логин</value>
   </data>
 </root>

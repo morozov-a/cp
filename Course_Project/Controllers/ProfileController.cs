@@ -306,16 +306,16 @@ namespace Course_Project.Controllers
         }
 
         [HttpPost]
+        [AllowAnonymous]
         public async Task<IActionResult> SetLanguage(string culture, string returnUrl)
         {
+            Response.Cookies.Append(".AspNetCore.Culture", $"c={culture}|uic={culture}");
             var user = await _userManager.GetUserAsync(User);
-            Response.Cookies.Append(
-                CookieRequestCultureProvider.DefaultCookieName,
-                CookieRequestCultureProvider.MakeCookieValue(new RequestCulture(culture)),
-                new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) }
-            );
-            user.Culture = culture;
-            await _userManager.UpdateAsync(user);
+            if(user != null)
+            {
+                user.Culture = culture;
+                await _userManager.UpdateAsync(user);
+            }
             return LocalRedirect(returnUrl);
         }
 

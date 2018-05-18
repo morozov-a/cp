@@ -3,21 +3,21 @@
     ViewData["Title"] = Localizer["Register"];
 }
 
-<h2>@ViewData["Title"]</h2>
-<h4>@Localizer["Associate your"] @ViewData["LoginProvider"] @Localizer["account."]</h4>
-<hr />
 
-<p class="text-info">
-    @Localizer["You've successfully authenticated with"] <strong>@ViewData["LoginProvider"]</strong>.
-    @Localizer["Please enter an email address for this site below and click the Register button to finish logging in."]
-</p>
 
-<div class="row">
-    <div class="col-md-4">
+<div class="row" style="text-align:center">
+    <div class="col-md-4 col-md-offset-4">
+        <h2 >@ViewData["Title"]</h2>
+        <h4 >@Localizer["Associate your"] @ViewData["LoginProvider"] @Localizer["account."]</h4>
+        <hr />
+        <p class="text-info" >
+            @Localizer["You've successfully authenticated with"] <strong>@ViewData["LoginProvider"]</strong>.
+            @Localizer["Please enter an email address for this site below and click the Register button to finish logging in."]
+        </p>
         <form asp-action="ExternalLoginConfirmation" asp-route-returnurl="@ViewData["ReturnUrl"]" method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Username"></label>
+                <label asp-for="Username">@Localizer["Username"]</label>
                 <input asp-for="Username" class="form-control" />
                 <span asp-validation-for="Username" class="text-danger"></span>
             </div>

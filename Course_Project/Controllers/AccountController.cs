@@ -1,21 +1,17 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Course_Project.Models;
 using Course_Project.Models.AccountViewModels;
 using Course_Project.Services;
 using Course_Project.Data;
-using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Http;
+using Microsoft.Extensions.Localization;
 
 namespace Course_Project.Controllers
 {
@@ -28,19 +24,22 @@ namespace Course_Project.Controllers
         private readonly ApplicationDbContext _context;
         private readonly IEmailSender _emailSender;
         private readonly ILogger _logger;
+        private readonly IStringLocalizer<AccountController> _localizer;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
             ApplicationDbContext context,
             IEmailSender emailSender,
-            ILogger<AccountController> logger)
+            ILogger<AccountController> logger,
+            IStringLocalizer<AccountController> localizer)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _context = context;
             _emailSender = emailSender;
             _logger = logger;
+            _localizer = localizer;
         }
 
         [TempData]
@@ -50,9 +49,7 @@ namespace Course_Project.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> Login(string returnUrl = null)
         {
-            // Clear the existing external cookie to ensure a clean login process
             await HttpContext.SignOutAsync(IdentityConstants.ExternalScheme);
-            
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -68,7 +65,6 @@ namespace Course_Project.Controllers
                 var user = await _userManager.FindByNameAsync(model.Username);
                 if (user != null)
                 {
-                    // проверяем, подтвержден ли email
                     if (!await _userManager.IsEmailConfirmedAsync(user))
                     {
                         ModelState.AddModelError(string.Empty, "Вы не подтвердили свой email");
@@ -76,13 +72,17 @@ namespace Course_Project.Controllers
                     }
                 }
 
-                var result = await _signInManager.PasswordSignInAsync(model.Username, model.Password,
-                                                    model.RememberMe, lockoutOnFailure: false);
+                var result = await _signInManager.PasswordSignInAsync(
+                                       model.Username, model.Password,
+                                       model.RememberMe, lockoutOnFailure: false);
                 if (result.Succeeded)
                 {
-
                     Response.Cookies.Append(".AspNetCore.Culture", $"c={user.Culture}|uic={user.Culture}");
                     return RedirectToLocal(returnUrl);
+                }
+                if (result.IsLockedOut)
+                {
+                    return RedirectToAction(nameof(Lockout));
                 }
                 else
                 {
@@ -90,7 +90,6 @@ namespace Course_Project.Controllers
                     return View(model);
                 }
             }
-
             return View(model);
         }
 
@@ -128,13 +127,12 @@ namespace Course_Project.Controllers
                     var callbackUrl = Url.Action(
                         "ConfirmEmail",
                         "Account",
-                        new { userId = user.Id, code = code },
+                        new { userId = user.Id, code },
                         protocol: HttpContext.Request.Scheme);
                     EmailService emailService = new EmailService();
-                    await emailService.SendEmailAsync(model.Email, "Confirm your account",
-                        $"Подтвердите регистрацию, перейдя по ссылке: <a href='{callbackUrl}'>ссылка</a>");
-
-                    // await _signInManager.SignInAsync(user, isPersistent: false);
+                    await emailService.SendEmailAsync(model.Email, _localizer["Confirm your account"],
+                        $"{_localizer["Confirm the registration by clicking on the link:"]} " +
+                        $"<a href='{callbackUrl}'>{_localizer["link"]}</a>");
                     return RedirectToAction(nameof(AccountController.ConfirmEmailAfterRegistration), "Account");
                 }
                 AddErrors(result);
@@ -156,7 +154,6 @@ namespace Course_Project.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult ExternalLogin(string provider, string returnUrl = null)
         {
-            // Request a redirect to the external login provider.
             var redirectUrl = Url.Action(nameof(ExternalLoginCallback), "Account", new { returnUrl });
             var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
             return Challenge(properties, provider);
@@ -168,7 +165,7 @@ namespace Course_Project.Controllers
         {
             if (remoteError != null)
             {
-                ErrorMessage = $"Error from external provider: {remoteError}";
+                ErrorMessage = $"{_localizer["Error from external provider:"]} {remoteError}";
                 return RedirectToAction(nameof(Login));
             }
             var info = await _signInManager.GetExternalLoginInfoAsync();
@@ -176,9 +173,11 @@ namespace Course_Project.Controllers
             {
                 return RedirectToAction(nameof(Login));
             }
-
-            // Sign in the user with this external login provider if the user already has a login.
-            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false, bypassTwoFactor: true);
+            var result = await _signInManager.ExternalLoginSignInAsync(
+                                                info.LoginProvider,
+                                                info.ProviderKey,
+                                                isPersistent: false,
+                                                bypassTwoFactor: true);
             if (result.Succeeded)
             {
                 var user = await _userManager.FindByLoginAsync(info.LoginProvider,info.ProviderKey);
@@ -193,7 +192,6 @@ namespace Course_Project.Controllers
             }
             else
             {
-                // If the user does not have an account, then ask the user to create an account.
                 ViewData["ReturnUrl"] = returnUrl;
                 ViewData["LoginProvider"] = info.LoginProvider;
                 var email = info.Principal.FindFirstValue(ClaimTypes.Email);
@@ -209,14 +207,16 @@ namespace Course_Project.Controllers
         {
             if (ModelState.IsValid)
             {
-                // Get the information about the user from the external login provider
                 var info = await _signInManager.GetExternalLoginInfoAsync();
                 if (info == null)
                 {
                     throw new ApplicationException("Error loading external login information during confirmation.");
                 }
                 var img = await _context.Source.FindAsync("DefaultUser");
-                var user = new ApplicationUser { UserName = model.Username, ProfilePicture = img.Picture, Email = model.Email, EmailConfirmed = true };
+                var user = new ApplicationUser { UserName = model.Username,
+                                                 ProfilePicture = img.Picture,
+                                                 Email = model.Email,
+                                                 EmailConfirmed = true };
                 var result = await _userManager.CreateAsync(user);
                 if (result.Succeeded)
                 {
@@ -279,12 +279,16 @@ namespace Course_Project.Controllers
                 {
                     return View("ForgotPasswordConfirmation");
                 }
-
                 var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                var callbackUrl = Url.Action(
+                        "ResetPassword",
+                        "Account",
+                        new { userId = user.Id, code },
+                        protocol: HttpContext.Request.Scheme);
                 EmailService emailService = new EmailService();
-                await emailService.SendEmailAsync(model.Email, "Reset Password",
-                    $"Для сброса пароля пройдите по ссылке: <a href='{callbackUrl}'>link</a>");
+                await emailService.SendEmailAsync(model.Email, _localizer["Reset Password"],
+                    $"{_localizer["To reset your password, click on the link :"]}" +
+                    $" <a href='{callbackUrl}'>{_localizer["link"]}</a>");
                 return View("ForgotPasswordConfirmation");
             }
 
@@ -322,7 +326,6 @@ namespace Course_Project.Controllers
             var user = await _userManager.FindByEmailAsync(model.Email);
             if (user == null)
             {
-                // Don't reveal that the user does not exist
                 return RedirectToAction(nameof(ResetPasswordConfirmation));
             }
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
@@ -360,12 +363,8 @@ namespace Course_Project.Controllers
 
         private IActionResult RedirectToLocal(string returnUrl)
         {
-            
-            
-
             if (Url.IsLocalUrl(returnUrl))
-            {
-           
+            {          
                 return Redirect(returnUrl);
             }
             else

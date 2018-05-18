@@ -123,13 +123,22 @@
   <data name="Log in" xml:space="preserve">
     <value>Аўтарызавацца</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
   <data name="Register as a new user" xml:space="preserve">
     <value>Зарэгіструйцеся як новы карыстальнік</value>
+  </data>
+  <data name="Remember me?" xml:space="preserve">
+    <value>Запомніць мяне?</value>
   </data>
   <data name="Use a local account to log in." xml:space="preserve">
     <value>Выкарыстоўвайце лакальную уліковы запіс для ўваходу ў сістэму.</value>
   </data>
   <data name="Use another service to log in." xml:space="preserve">
-    <value>Выкарыстоўвайце сацыяльныя сеткі для ўваходу.</value>
+    <value>Або выкарыстоўвайце сацыяльныя сеткі для ўваходу.</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Логін</value>
   </data>
 </root>

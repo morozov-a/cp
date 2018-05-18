@@ -132,4 +132,7 @@
   <data name="You've successfully authenticated with" xml:space="preserve">
     <value>Вы паспяхова прайшлі аўтэнтыфікацыю з дапамогай</value>
   </data>
+  <data name="Username" xml:space="preserve">
+    <value>Логін</value>
+  </data>
 </root>

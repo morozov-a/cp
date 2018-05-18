@@ -30,7 +30,6 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Post
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Posts.Index.ru.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csproj.GenerateResource.cache
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csproj.CoreCompileInputs.cache
-D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.AssemblyInfoInputs.cache
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.AssemblyInfo.cs
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\be\Course_Project.resources.dll
@@ -105,3 +104,7 @@ D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Role
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.Index.ru.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.UserList.be.resources
 D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Views.Roles.UserList.ru.resources
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.csprojResolveAssemblyReference.cache
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\UserSecretsAssemblyInfo.cs
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Controllers.AccountController.be.resources
+D:\cp\Course_Project\obj\Debug\netcoreapp2.0\Course_Project.Resources.Controllers.AccountController.ru.resources

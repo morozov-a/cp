@@ -256,3 +256,17 @@
   background-color: #fff;
   color: #000;
 }
+
+
+.social-button {
+  background-color: #fff;
+  width: 64px;
+  height:64px;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  outline: none;
+  position: relative;
+  cursor: pointer;
+  margin:20px;
+}

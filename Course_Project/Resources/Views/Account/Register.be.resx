@@ -117,10 +117,19 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ConfirmPassword" xml:space="preserve">
+    <value>Увядзіце пароль яшчэ раз</value>
+  </data>
   <data name="Create a new account." xml:space="preserve">
     <value>Стварыць новы акаунт.</value>
   </data>
+  <data name="Password" xml:space="preserve">
+    <value>Пароль</value>
+  </data>
   <data name="Register" xml:space="preserve">
     <value>Рэгістрацыя</value>
+  </data>
+  <data name="Username" xml:space="preserve">
+    <value>Логін</value>
   </data>
 </root>
